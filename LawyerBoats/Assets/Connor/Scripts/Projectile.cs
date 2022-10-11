@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Transform target;
-    public float speed = 0.2f;
+    public float speed = 2.0f;
     public void Track (Transform targetPos)
     {
         target = targetPos;
