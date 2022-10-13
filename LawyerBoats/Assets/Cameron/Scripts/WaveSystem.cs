@@ -61,12 +61,12 @@ public class WaveSystem : MonoBehaviour
     void NextWave()
     {
         ++currentWave;
-        if (currentWave == amountOfWaves)
+        /*if (currentWave == amountOfWaves)
         {
             Time.timeScale = 0;
             winScreen.SetActive(true);
             return;
-        }
+        }*/
         timeBetweenSpawns = waveTime / EnemiesInWave();
     }
 
@@ -82,7 +82,7 @@ public class WaveSystem : MonoBehaviour
 
     void SpawnEnemy(GameObject Enemy)
     {
-        GameObject spawnedEnemy = Instantiate(Enemy);
+        GameObject spawnedEnemy = Instantiate(Enemy, transform);
     }
 
 }
