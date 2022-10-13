@@ -27,8 +27,8 @@ public class TileManager : MonoBehaviour
         }
     }
 
-    void Update()
+    public void SelectTower(int towerNum)
     {
-        
+        selectedTower = towerNum;
     }
 }
