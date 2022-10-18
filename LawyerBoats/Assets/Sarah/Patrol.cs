@@ -9,7 +9,7 @@ public class Patrol : MonoBehaviour
     int PatrolLocationsMax = -1;
     int CurrentPatrolLocation = 0;
     bool HasReachedEnd = false;
-    EnemyMovement enemy;
+    Enemy enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,7 @@ public class Patrol : MonoBehaviour
             }
             else if(child.CompareTag("Enemy"))
             {
-                enemy = child.gameObject.GetComponent<EnemyMovement>();
+                enemy = child.gameObject.GetComponent<Enemy>();
                 enemy.PatrolComp = this;
             }
 
