@@ -29,11 +29,6 @@ public class GameManager : MonoBehaviour
     {
         UpdateGameState(State);
     }
-
-    void Start()
-    {
-        UpdateGameState(GameState.Menu);
-    }
     public void UpdateGameState(GameState newState)
     {
         State = newState;
