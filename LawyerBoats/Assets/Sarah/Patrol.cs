@@ -10,6 +10,8 @@ public class Patrol : MonoBehaviour
     int CurrentPatrolLocation = 0;
     bool HasReachedEnd = false;
     Enemy enemy;
+    public bool Beeline;
+    GameObject Base;
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +33,18 @@ public class Patrol : MonoBehaviour
             }
 
         }
+        if (Beeline)
+        {
+            Base = GameObject.FindGameObjectWithTag("Base");
+        }
 
         if (PatrolLocation != null)
         {
             PatrolTo = PatrolLocation[CurrentPatrolLocation];
+        }
+        else if(Beeline)
+        {
+            PatrolTo = Base;
         }
         else
         {
@@ -48,17 +58,20 @@ public class Patrol : MonoBehaviour
     {
         if (!HasReachedEnd)
         {
-            if (PatrolTo.transform.position == enemy.transform.position)
+            if (!Beeline)
             {
-                CurrentPatrolLocation++;
+                if (PatrolTo.transform.position == enemy.transform.position)
+                {
+                    CurrentPatrolLocation++;
 
-                if (CurrentPatrolLocation <= PatrolLocationsMax)
-                {
-                    PatrolTo = PatrolLocation[CurrentPatrolLocation];
-                }
-                else
-                {
-                    HasReachedEnd = true;
+                    if (CurrentPatrolLocation <= PatrolLocationsMax)
+                    {
+                        PatrolTo = PatrolLocation[CurrentPatrolLocation];
+                    }
+                    else
+                    {
+                        HasReachedEnd = true;
+                    }
                 }
             }
         }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float Speed;
+    public int MaxHealth;
+    int Health;
     Rigidbody RB;
     BoxCollider Collider;
     internal Patrol PatrolComp;
@@ -16,6 +18,7 @@ public class Enemy : MonoBehaviour
     {
         RB = GetComponent<Rigidbody>();
         Collider = GetComponent<BoxCollider>();
+        Health = MaxHealth;
     }
 
     // Update is called once per frame
