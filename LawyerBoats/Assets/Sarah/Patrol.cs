@@ -40,11 +40,14 @@ public class Patrol : MonoBehaviour
 
         if (PatrolLocation != null)
         {
-            PatrolTo = PatrolLocation[CurrentPatrolLocation];
-        }
-        else if(Beeline)
-        {
-            PatrolTo = Base;
+            if(Beeline)
+            {
+                PatrolTo = Base;
+            }
+            else
+            {
+                PatrolTo = PatrolLocation[CurrentPatrolLocation];
+            }
         }
         else
         {
@@ -60,7 +63,7 @@ public class Patrol : MonoBehaviour
         {
             if (!Beeline)
             {
-                if (PatrolTo.transform.position == enemy.transform.position)
+                if (new Vector3(PatrolTo.transform.position.x, enemy.transform.position.y, PatrolTo.transform.position.z) == enemy.transform.position)
                 {
                     CurrentPatrolLocation++;
 
