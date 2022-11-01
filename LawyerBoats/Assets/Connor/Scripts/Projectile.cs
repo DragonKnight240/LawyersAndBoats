@@ -7,8 +7,14 @@ public class Projectile : MonoBehaviour
     private Transform target;
 
     public float speed = 2.0f;
-    public float explosionRadius = 2.0f;
+    public float splashRadius = 2.0f;
+
+    public int electricTargets = 1;
+    private int targetsZapped;
+
     public bool explosive = false;
+    public bool electrifying = false;
+
 
     public void Track(Transform targetPos)
     {
@@ -20,7 +26,7 @@ public class Projectile : MonoBehaviour
     {
         if (target == null)
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject); // maybe add effect here
             return;
         }
 
@@ -40,26 +46,46 @@ public class Projectile : MonoBehaviour
 
     void Hit()
     {
+        //maybe switch statement after more effects 
         if (explosive)
         {
             Debug.Log("Exploded");
             Explode();
         }
+        else if (electrifying)
+        {
+            Debug.Log("Zapped");
+            Damage();
+            ChainLightning();
+        }
         else
         {
-            Debug.Log("Fail");
+            Debug.Log("Normal Hit");
             Damage();
         }
     }
 
     void Explode()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, explosionRadius);
+        Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius);
         foreach (Collider collider in colliders)
         {
             if (collider.tag == "Enemy")
             {
                 Destroy(collider.gameObject);
+            }
+        }
+    }
+
+    void ChainLightning()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius); // Doesnt kill enemy if collider is
+        for (int i = 0; i < colliders.Length; i++)                                      // final one in array as < is used if
+        {                                                                               // <= is used then it just doesnt work..
+            if (colliders[i].tag == "Enemy" && targetsZapped < electricTargets)
+            {
+                Destroy(colliders[i].gameObject);
+                targetsZapped++;
             }
         }
     }
@@ -73,6 +99,6 @@ public class Projectile : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, explosionRadius);
+        Gizmos.DrawWireSphere(transform.position, splashRadius);
     }
 }
