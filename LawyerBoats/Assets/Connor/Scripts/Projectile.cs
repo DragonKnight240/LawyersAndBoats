@@ -79,9 +79,13 @@ public class Projectile : MonoBehaviour
 
     void ChainLightning()
     {
-        Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius); // Doesnt kill enemy if collider is
-        for (int i = 0; i < colliders.Length; i++)                                      // final one in array as < is used if
-        {                                                                               // <= is used then it just doesnt work..
+        Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius);
+        for (int i = 0; i < colliders.Length; i++)                            
+        {                      
+            if (colliders[i].gameObject == target.gameObject)
+            {
+                continue;
+            }
             if (colliders[i].tag == "Enemy" && targetsZapped < electricTargets)
             {
                 Destroy(colliders[i].gameObject);
