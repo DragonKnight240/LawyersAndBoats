@@ -6,19 +6,23 @@ public class BaseTurret : MonoBehaviour
 {
     public Transform target;
 
+    public string enemyTag = "Enemy";
+
+    public bool usesProjectile = true;
+
     public float radius = 10f;
     public float fireRate = 1f;
-    private float fireTimer = 0f;
-
-    public string enemyTag = "Enemy";
+    public float rotateSpeed = 2f;
 
     public GameObject projectileObject;
     public Transform projectileOrigin;
+    public Transform towerRotate;
 
+    private float fireTimer = 0f;
 
     void Start()
     {
-        InvokeRepeating("FindNearbyEnemies", 0f, 1.0f);
+        InvokeRepeating("FindNearbyEnemies", 0f, 0.5f);
     }
 
     void FindNearbyEnemies()
@@ -53,14 +57,18 @@ public class BaseTurret : MonoBehaviour
         if (target == null)
             return;
 
-        if (fireTimer <= 0.0f)
+        TowerRotate();
+
+        if (usesProjectile)
         {
-            Fire();
-            fireTimer = 1f / fireRate;
+            if (fireTimer <= 0.0f)
+            {
+                Fire();
+                fireTimer = 1f / fireRate;
+            }
+
+                fireTimer -= Time.deltaTime;
         }
-
-        fireTimer -= Time.deltaTime;
-
     }
 
     void Fire()
@@ -73,5 +81,13 @@ public class BaseTurret : MonoBehaviour
         {
             projectile.Track(target);
         }
+    }
+
+    void TowerRotate()
+    {
+        Vector3 direction = target.position - transform.position;
+        Quaternion look = Quaternion.LookRotation(direction);
+        Vector3 rotation = Quaternion.Lerp(towerRotate.rotation, look, Time.deltaTime * rotateSpeed).eulerAngles;
+        towerRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
 }

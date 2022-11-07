@@ -98,6 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 4
   splashRadius: 10
-  electricTargets: 5
+  electricTargets: 1
   explosive: 0
   electrifying: 1
