@@ -28,8 +28,8 @@ Transform:
   m_GameObject: {fileID: 5551312999631780968}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.7893343, y: 4.167267, z: -5.0592866}
-  m_LocalScale: {x: 1, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.78, y: 0.356, z: 0.356}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2e0b957ab374c34096b4b7dc1951726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 30
   splashRadius: 10
   electricTargets: 1
   explosive: 0

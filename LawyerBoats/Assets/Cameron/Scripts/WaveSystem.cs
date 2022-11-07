@@ -14,6 +14,7 @@ public class WaveSystem : MonoBehaviour
     int amountOfWaves;
     int currentEnemy = 0;
     bool spawningEnemies = true;
+    [SerializeField] Transform portal;
 
     [Serializable]
     public struct Wave
@@ -95,7 +96,8 @@ public class WaveSystem : MonoBehaviour
 
     void SpawnEnemy(GameObject Enemy)
     {
-        GameObject spawnedEnemy = Instantiate(Enemy, transform);
+        GameObject spawnedEnemy = Instantiate(Enemy, portal);
+        spawnedEnemy.transform.parent = null;
     }
 
 }

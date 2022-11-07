@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Cameron/Scenes/CamsTestLevel.unity
+    guid: 40905182c03408548a8171bea8617bad
   m_configObjects: {}

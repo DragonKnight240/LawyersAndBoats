@@ -33,11 +33,17 @@ public class Enemy : MonoBehaviour
             if (Health <= 0)
             {
                 isAlive = false;
+                Destroy(gameObject);
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void TakeDamage(int damage)
+    {
+        Health -= damage;
+    }
+
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.transform.CompareTag("Base"))
         {

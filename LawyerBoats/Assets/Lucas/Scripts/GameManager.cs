@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 public enum GameState 
 {
@@ -12,23 +13,36 @@ public enum GameState
 public class GameManager : MonoBehaviour
 {
 
-    public static GameManager Instance;
+    private static GameManager _instance;
+    public static GameManager Instance { get { return _instance; } }
     public GameState State;
 
     private int Money = 0;
     private int Health = 100;
+
+    [SerializeField] TextMeshProUGUI healthText;
     
 
     void Awake()
     {
         DontDestroyOnLoad(gameObject);
         Init();
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
     }
 
     private void Init()
     {
         UpdateGameState(State);
     }
+
+
     public void UpdateGameState(GameState newState)
     {
         State = newState;
@@ -66,11 +80,13 @@ public class GameManager : MonoBehaviour
 
     public void addHealth()
     {
+        UpdateHealthUI();
         Health++;
     }
 
     public void loseHealth(int health)
     {
+        UpdateHealthUI();
         Health -= health;
     }
 
@@ -92,6 +108,11 @@ public class GameManager : MonoBehaviour
     public int getMoney()
     {
         return Money;
+    }
+
+    void UpdateHealthUI()
+    {
+        healthText.text = "Health: " + Health;
     }
 }
 

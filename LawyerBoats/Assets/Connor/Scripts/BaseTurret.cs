@@ -18,6 +18,8 @@ public class BaseTurret : MonoBehaviour
     public Transform projectileOrigin;
     public Transform towerRotate;
 
+    public int damage = 10;
+
     private float fireTimer = 0f;
 
     void Start()
@@ -76,6 +78,7 @@ public class BaseTurret : MonoBehaviour
         Debug.Log("Fire");
         GameObject newProjectile = (GameObject)Instantiate(projectileObject, projectileOrigin.position, projectileOrigin.rotation);
         Projectile projectile = newProjectile.GetComponent<Projectile>();
+        projectile.damage = damage;
 
         if (projectile != null)
         {

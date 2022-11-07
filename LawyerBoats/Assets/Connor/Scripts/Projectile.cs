@@ -15,6 +15,8 @@ public class Projectile : MonoBehaviour
     public bool explosive = false;
     public bool electrifying = false;
 
+    public int damage;
+
 
     public void Track(Transform targetPos)
     {
@@ -72,7 +74,7 @@ public class Projectile : MonoBehaviour
         {
             if (collider.tag == "Enemy")
             {
-                Destroy(collider.gameObject);
+                collider.GetComponent<Enemy>().TakeDamage(damage);
             }
         }
     }
@@ -88,7 +90,7 @@ public class Projectile : MonoBehaviour
             }
             if (colliders[i].tag == "Enemy" && targetsZapped < electricTargets)
             {
-                Destroy(colliders[i].gameObject);
+                colliders[i].GetComponent<Enemy>().TakeDamage(damage);
                 targetsZapped++;
             }
         }
@@ -96,7 +98,7 @@ public class Projectile : MonoBehaviour
 
     void Damage()
     {
-        Destroy(target.gameObject);
+        target.GetComponent<Enemy>().TakeDamage(damage);
         Destroy(this.gameObject);
     }
 
