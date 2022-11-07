@@ -69,6 +69,9 @@ public class Patrol : MonoBehaviour
                     if (CurrentPatrolLocation <= PatrolLocationsMax)
                     {
                         PatrolTo = PatrolLocation[CurrentPatrolLocation];
+
+                        transform.LookAt(PatrolTo.transform);
+
                     }
                     else
                     {
