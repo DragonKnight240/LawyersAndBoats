@@ -12,6 +12,8 @@ public class WaveSystem : MonoBehaviour
     public Wave[] waves;
     int currentWave = 0;
     int amountOfWaves;
+    int currentEnemy = 0;
+    bool spawningEnemies = true;
 
     [Serializable]
     public struct Wave
@@ -36,25 +38,36 @@ public class WaveSystem : MonoBehaviour
     {
         timeSinceLastSpawn += Time.deltaTime;
 
-        if (timeSinceLastSpawn > timeBetweenSpawns)
+        if (timeSinceLastSpawn > timeBetweenSpawns && spawningEnemies)
         {
             timeSinceLastSpawn = 0f;
-            int rand = 0;
-            do
+            /*do
             {
                 rand = UnityEngine.Random.Range(0, waves[currentWave].EnemiesToSpawn.Length);
-            } while (waves[currentWave].EnemiesToSpawn[rand].enemiesInWave <= 0);
+            } while (waves[currentWave].EnemiesToSpawn[rand].enemiesInWave <= 0);*/
 
-            if (waves[currentWave].EnemiesToSpawn[rand].enemiesInWave > 0)
+            if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave > 0)
             {
-                SpawnEnemy(waves[currentWave].EnemiesToSpawn[rand].enemy);
-                waves[currentWave].EnemiesToSpawn[rand].enemiesInWave--;
+                SpawnEnemy(waves[currentWave].EnemiesToSpawn[currentEnemy].enemy);
+                waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave--;
             }
 
             if (EnemiesInWave() <= 0)
             {
                 NextWave();
             }
+
+            if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave <= 0)
+            {
+                currentEnemy++;
+            }
+
+            if (currentWave >= waves.Length)
+            {
+                spawningEnemies = false;
+            }
+
+
         }
     }
 
