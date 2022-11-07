@@ -5,36 +5,48 @@ using UnityEngine;
 public class Patrol : MonoBehaviour
 {
     List<GameObject> PatrolLocation;
+    internal GameObject PatrolLocationsObject;
     internal GameObject PatrolTo;
     int PatrolLocationsMax = -1;
     int CurrentPatrolLocation = 0;
     bool HasReachedEnd = false;
     Enemy enemy;
+    public bool Beeline;
+    GameObject Base;
 
     // Start is called before the first frame update
     void Start()
     {
         PatrolLocation = new List<GameObject>();
 
-        foreach (Transform child in transform)
+        enemy = GetComponent<Enemy>();
+        PatrolLocationsObject = GameObject.FindGameObjectWithTag("PatrolLocation");
+
+        foreach (Transform child in PatrolLocationsObject.transform)
         {
             if (child.CompareTag("PatrolLocation"))
             {
                 PatrolLocation.Add(child.gameObject);
                 PatrolLocationsMax++;
-                //print("Add Child");
-            }
-            else if(child.CompareTag("Enemy"))
-            {
-                enemy = child.gameObject.GetComponent<Enemy>();
-                enemy.PatrolComp = this;
             }
 
         }
 
+        if (Beeline)
+        {
+            Base = GameObject.FindGameObjectWithTag("Base");
+        }
+
         if (PatrolLocation != null)
         {
-            PatrolTo = PatrolLocation[CurrentPatrolLocation];
+            if(Beeline)
+            {
+                PatrolTo = Base;
+            }
+            else
+            {
+                PatrolTo = PatrolLocation[CurrentPatrolLocation];
+            }
         }
         else
         {
@@ -48,17 +60,23 @@ public class Patrol : MonoBehaviour
     {
         if (!HasReachedEnd)
         {
-            if (PatrolTo.transform.position == enemy.transform.position)
+            if (!Beeline)
             {
-                CurrentPatrolLocation++;
+                if (new Vector3(PatrolTo.transform.position.x, enemy.transform.position.y, PatrolTo.transform.position.z) == enemy.transform.position)
+                {
+                    CurrentPatrolLocation++;
 
-                if (CurrentPatrolLocation <= PatrolLocationsMax)
-                {
-                    PatrolTo = PatrolLocation[CurrentPatrolLocation];
-                }
-                else
-                {
-                    HasReachedEnd = true;
+                    if (CurrentPatrolLocation <= PatrolLocationsMax)
+                    {
+                        PatrolTo = PatrolLocation[CurrentPatrolLocation];
+
+                        transform.LookAt(PatrolTo.transform);
+
+                    }
+                    else
+                    {
+                        HasReachedEnd = true;
+                    }
                 }
             }
         }
