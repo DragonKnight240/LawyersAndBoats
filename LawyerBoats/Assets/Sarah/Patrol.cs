@@ -5,6 +5,7 @@ using UnityEngine;
 public class Patrol : MonoBehaviour
 {
     List<GameObject> PatrolLocation;
+    internal GameObject PatrolLocationsObject;
     internal GameObject PatrolTo;
     int PatrolLocationsMax = -1;
     int CurrentPatrolLocation = 0;
@@ -18,21 +19,19 @@ public class Patrol : MonoBehaviour
     {
         PatrolLocation = new List<GameObject>();
 
-        foreach (Transform child in transform)
+        enemy = GetComponent<Enemy>();
+        PatrolLocationsObject = GameObject.FindGameObjectWithTag("PatrolLocation");
+
+        foreach (Transform child in PatrolLocationsObject.transform)
         {
             if (child.CompareTag("PatrolLocation"))
             {
                 PatrolLocation.Add(child.gameObject);
                 PatrolLocationsMax++;
-                //print("Add Child");
-            }
-            else if(child.CompareTag("Enemy"))
-            {
-                enemy = child.gameObject.GetComponent<Enemy>();
-                enemy.PatrolComp = this;
             }
 
         }
+
         if (Beeline)
         {
             Base = GameObject.FindGameObjectWithTag("Base");

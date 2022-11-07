@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
         RB = GetComponent<Rigidbody>();
         Collider = GetComponent<BoxCollider>();
         Health = MaxHealth;
+        PatrolComp = GetComponent<Patrol>();
     }
 
     // Update is called once per frame
@@ -32,8 +33,7 @@ public class Enemy : MonoBehaviour
         if (collision.transform.CompareTag("Base"))
         {
             GameManager.Instance.loseHealth(Damage);
-            GameManager.Instance.addMoney();
-            Destroy(this.transform.parent.gameObject);
+            Destroy(this.gameObject);
         }
     }
 }
