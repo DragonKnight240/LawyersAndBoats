@@ -40,6 +40,9 @@ public class Tile : MonoBehaviour
     void OnMouseDown()
     {
         //if has enough money
-        attachedTower = Instantiate(TileManager.Instance.towerTypes[TileManager.Instance.selectedTower], transform);
+        if(attachedTower == null)
+        {
+            attachedTower = Instantiate(TileManager.Instance.towerTypes[TileManager.Instance.selectedTower], transform);
+        }
     }
 }
