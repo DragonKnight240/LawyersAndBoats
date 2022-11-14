@@ -8,7 +8,7 @@ public class Patrol : MonoBehaviour
     internal GameObject PatrolLocationsObject;
     internal GameObject PatrolTo;
     int PatrolLocationsMax = -1;
-    int CurrentPatrolLocation = 0;
+    internal int CurrentPatrolLocation = 0;
     bool HasReachedEnd = false;
     Enemy enemy;
     public bool Beeline;
@@ -45,7 +45,10 @@ public class Patrol : MonoBehaviour
             }
             else
             {
-                PatrolTo = PatrolLocation[CurrentPatrolLocation];
+                if (PatrolTo == null)
+                {
+                    PatrolTo = PatrolLocation[CurrentPatrolLocation];
+                }
             }
         }
         else

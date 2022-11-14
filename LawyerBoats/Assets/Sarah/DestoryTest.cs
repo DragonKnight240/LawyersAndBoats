@@ -19,8 +19,9 @@ public class DestoryTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (repeated > RepeatTime)
+        if (repeated < RepeatTime)
         {
+            //print("Timer");
             timer += Time.deltaTime;
 
             if (DestoryIn <= timer)

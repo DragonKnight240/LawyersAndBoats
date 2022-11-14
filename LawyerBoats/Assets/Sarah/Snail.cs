@@ -10,6 +10,7 @@ public class Snail : MonoBehaviour
     Enemy enemy;
     public float SpawnMin = 5;
     public float SpawnMax = 50;
+    internal bool hasSpawned = false;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,11 @@ public class Snail : MonoBehaviour
     {
         if(!enemy.isAlive)
         {
-            spawn();
+            if (!hasSpawned)
+            {
+                hasSpawned = true;
+                spawn();
+            }
         }
     }
 
@@ -38,8 +43,9 @@ public class Snail : MonoBehaviour
 
                 GameObject newSnail = Instantiate(Spawnable, position, transform.rotation);
 
-                newSnail.SetActive(true);
                 newSnail.GetComponent<Patrol>().PatrolTo = this.GetComponent<Patrol>().PatrolTo;
+                newSnail.GetComponent<Patrol>().CurrentPatrolLocation = this.GetComponent<Patrol>().CurrentPatrolLocation;
+                newSnail.SetActive(true);
             }
         }
     }

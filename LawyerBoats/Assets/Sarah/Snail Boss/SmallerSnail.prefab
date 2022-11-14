@@ -353,7 +353,7 @@ GameObject:
   - component: {fileID: 1488294291398905720}
   - component: {fileID: 7647584298586470181}
   m_Layer: 0
-  m_Name: SmallerSnail 1
+  m_Name: SmallerSnail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -422,9 +422,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  MaxHealth: 0
+  MaxHealth: 10
   Damage: 2
   Money: 0
+  AnimationTimer: 5
 --- !u!114 &7647584298586470181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -438,7 +439,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BreakIntoAmount: 2
-  shouldBreak: 1
+  shouldBreak: 0
   Spawnable: {fileID: 7459815668155506533}
   SpawnMin: 10
   SpawnMax: 20

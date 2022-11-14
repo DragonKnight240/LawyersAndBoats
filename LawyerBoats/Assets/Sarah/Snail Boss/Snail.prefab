@@ -333,9 +333,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 5
-  MaxHealth: 0
+  MaxHealth: 10
   Damage: 2
   Money: 0
+  AnimationTimer: 5
 --- !u!114 &4525467153321375292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,9 +351,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BreakIntoAmount: 2
   shouldBreak: 1
-  Spawnable: {fileID: 5978748775878025678, guid: 645a176c00c055b47a4071ec8d5cb9da, type: 3}
-  SpawnMin: 5
-  SpawnMax: 50
+  Spawnable: {fileID: 7459815668155506533, guid: 76fc98fad38296c469449bd4b930ca5b, type: 3}
+  SpawnMin: 10
+  SpawnMax: 20
 --- !u!1 &4399365631780901891
 GameObject:
   m_ObjectHideFlags: 0
