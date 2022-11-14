@@ -13,10 +13,15 @@ public class Enemy : MonoBehaviour
     public int Damage = 2;
     public int Money;
     internal bool isAlive = true;
+    internal bool shouldMove = true;
+    MeshRenderer MeshRend;
+    float Timer = 0;
+    public float AnimationTimer = 5;
 
     // Start is called before the first frame update
     void Start()
     {
+        MeshRend = GetComponent<MeshRenderer>();
         RB = GetComponent<Rigidbody>();
         Collider = GetComponent<BoxCollider>();
         Health = MaxHealth;
@@ -28,12 +33,25 @@ public class Enemy : MonoBehaviour
     {
         if (isAlive)
         {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(PatrolComp.PatrolTo.transform.position.x, transform.position.y, PatrolComp.PatrolTo.transform.position.z), Time.deltaTime * Speed);
+            if (shouldMove)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(PatrolComp.PatrolTo.transform.position.x, transform.position.y, PatrolComp.PatrolTo.transform.position.z), Time.deltaTime * Speed);
+            }
 
             if (Health <= 0)
             {
                 isAlive = false;
-                Destroy(gameObject);
+                transform.gameObject.tag = "Untagged";
+
+            }
+        }
+        else
+        {
+            Timer += Time.deltaTime;
+
+            if(Timer >= AnimationTimer)
+            {
+                Destroy(this.gameObject);
             }
         }
     }
