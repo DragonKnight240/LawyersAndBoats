@@ -4964,3 +4964,5 @@ MonoBehaviour:
   projectileObject: {fileID: 0}
   projectileOrigin: {fileID: 2824199312159113235}
   towerRotate: {fileID: 2824199313325515787}
+  damage: 10
+  cost: 10

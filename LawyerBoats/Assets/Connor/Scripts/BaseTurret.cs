@@ -20,6 +20,8 @@ public class BaseTurret : MonoBehaviour
 
     public int damage = 10;
 
+    [SerializeField] int cost = 5;
+
     private float fireTimer = 0f;
 
     void Start()
@@ -52,6 +54,11 @@ public class BaseTurret : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(transform.position, radius);
+    }
+
+    public int GetCost()
+    {
+        return cost;
     }
 
     void Update()

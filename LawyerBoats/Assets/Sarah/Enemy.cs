@@ -33,6 +33,7 @@ public class Enemy : MonoBehaviour
             if (Health <= 0)
             {
                 isAlive = false;
+                GameManager.Instance.addMoney(Money);
                 Destroy(gameObject);
             }
         }
