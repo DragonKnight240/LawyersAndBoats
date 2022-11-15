@@ -8,11 +8,20 @@ public class Tile : MonoBehaviour
     [SerializeField] public bool highlighted = false;
     Material startingMat;
     MeshRenderer meshRenderer;
+    TileManager tm;
+    GameManager gm;
 
     void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         startingMat = meshRenderer.material;
+        
+    }
+
+    private void Start()
+    {
+        tm = TileManager.Instance;
+        gm = GameManager.Instance;
     }
 
     void OnMouseOver()
@@ -39,10 +48,14 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        //if has enough money
-        if(attachedTower == null)
+        if(gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost() > 0)
         {
-            attachedTower = Instantiate(TileManager.Instance.towerTypes[TileManager.Instance.selectedTower], transform);
+            if (attachedTower == null)
+            {
+                gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost());
+                attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
+            }
         }
+        
     }
 }

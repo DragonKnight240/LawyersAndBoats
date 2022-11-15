@@ -151,3 +151,5 @@ MonoBehaviour:
   projectileObject: {fileID: 5551312999631780968, guid: 592aa9a2cab8241418ec951c4154eaf0, type: 3}
   projectileOrigin: {fileID: 7213416211895235529}
   towerRotate: {fileID: 7213416212892604369}
+  damage: 10
+  cost: 5

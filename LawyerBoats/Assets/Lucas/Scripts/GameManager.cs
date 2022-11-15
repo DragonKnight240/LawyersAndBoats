@@ -20,8 +20,13 @@ public class GameManager : MonoBehaviour
     private int Money = 0;
     private int Health = 100;
 
+    [SerializeField] int startingMoney = 50;
+
     [SerializeField] TextMeshProUGUI healthText;
-    
+    [SerializeField] TextMeshProUGUI moneyText;
+
+    public int enemyCount = 0;
+
 
     void Awake()
     {
@@ -39,7 +44,9 @@ public class GameManager : MonoBehaviour
 
     private void Init()
     {
+        Money = startingMoney;
         UpdateGameState(State);
+        UpdateMoneyUI();
     }
 
 
@@ -97,7 +104,14 @@ public class GameManager : MonoBehaviour
 
     public void addMoney()
     {
+        UpdateMoneyUI();
         Money++;
+    }
+
+    public void addMoney(int amt)
+    {
+        UpdateMoneyUI();
+        Money += amt;
     }
 
     public void loseMoney(int money)
@@ -113,6 +127,11 @@ public class GameManager : MonoBehaviour
     void UpdateHealthUI()
     {
         healthText.text = "Health: " + Health;
+    }
+
+    public void UpdateMoneyUI()
+    {
+        moneyText.text = "Coins: " + Money;
     }
 }
 

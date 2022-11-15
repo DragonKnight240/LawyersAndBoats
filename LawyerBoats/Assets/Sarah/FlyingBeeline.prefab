@@ -131,7 +131,7 @@ MonoBehaviour:
   Speed: 10
   MaxHealth: 12
   Damage: 2
-  Money: 0
+  Money: 5
 --- !u!114 &6649597763383225798
 MonoBehaviour:
   m_ObjectHideFlags: 0

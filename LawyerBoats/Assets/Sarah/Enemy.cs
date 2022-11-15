@@ -53,7 +53,10 @@ public class Enemy : MonoBehaviour
 
             if(Timer >= AnimationTimer)
             {
-                Destroy(this.gameObject);
+
+                GameManager.Instance.addMoney(Money);
+                GameManager.Instance.enemyCount--;
+                Destroy(gameObject);
             }
         }
     }
@@ -67,6 +70,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.transform.CompareTag("Base"))
         {
+            GameManager.Instance.enemyCount--;
             GameManager.Instance.loseHealth(Damage);
             Destroy(this.gameObject);
         }
