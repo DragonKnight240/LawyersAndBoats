@@ -6,16 +6,21 @@ public class Projectile : MonoBehaviour
 {
     private Transform target;
 
-    public float speed = 2.0f;
-    public float splashRadius = 2.0f;
-
-    public int electricTargets = 1;
     private int targetsZapped;
 
+    public float speed = 2.0f; // proj speed
+    public float splashRadius = 2.0f; // splash damage radius for explosives/chain effects
+
+    //on hit effects
     public bool explosive = false;
     public bool electrifying = false;
+    public bool bleed = false; 
 
-    public int damage;
+    public int electricTargets = 1; // additional targets to zap
+    public int damage; // tower collision damage
+    public int bleedDamage; // Total bleed damage
+    public int bleedTime; // Total bleed time
+    private int bleedRemaining;
 
 
     public void Track(Transform targetPos)
@@ -60,6 +65,12 @@ public class Projectile : MonoBehaviour
             Damage();
             ChainLightning();
         }
+        else if (bleed)
+        {
+            Debug.Log("Bleeding");
+            Damage();
+            StartCoroutine(Bleeding());
+        }
         else
         {
             Debug.Log("Normal Hit");
@@ -93,6 +104,18 @@ public class Projectile : MonoBehaviour
                 colliders[i].GetComponent<Enemy>().TakeDamage(damage);
                 targetsZapped++;
             }
+        }
+    }
+
+    private IEnumerator Bleeding()
+    {
+        bleedRemaining = bleedTime;
+
+        while (bleedRemaining > 0)
+        {
+            target.GetComponent<Enemy>().TakeDamage(bleedDamage/bleedTime);
+            yield return new WaitForSeconds(1.00f); // per second
+            bleedRemaining -= 1;
         }
     }
 

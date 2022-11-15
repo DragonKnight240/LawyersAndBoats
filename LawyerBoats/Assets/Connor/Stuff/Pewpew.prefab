@@ -98,6 +98,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 30
   splashRadius: 2
-  electricTargets: 1
   explosive: 0
   electrifying: 0
+  bleed: 1
+  electricTargets: 1
+  damage: 0
+  bleedDamage: 1000
+  bleedTime: 1
