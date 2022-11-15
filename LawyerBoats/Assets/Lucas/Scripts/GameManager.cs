@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI moneyText;
 
+    public int enemyCount = 0;
+
 
     void Awake()
     {

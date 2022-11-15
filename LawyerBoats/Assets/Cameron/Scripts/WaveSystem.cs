@@ -16,6 +16,9 @@ public class WaveSystem : MonoBehaviour
     bool spawningEnemies = true;
     [SerializeField] Transform portal;
 
+    [SerializeField] float timeToNextWave = 5.0f;
+    float currentTimeToNextWave = 0;
+
     [Serializable]
     public struct Wave
     {
@@ -33,13 +36,30 @@ public class WaveSystem : MonoBehaviour
     {
         timeBetweenSpawns = waveTime / EnemiesInWave();
         amountOfWaves = waves.Length;
+        currentTimeToNextWave = timeToNextWave;
     }
 
     void Update()
     {
         timeSinceLastSpawn += Time.deltaTime;
+        if (currentTimeToNextWave > 0)
+        {
+            currentTimeToNextWave -= Time.deltaTime;
+        }
+        else
+        {
+            if (UIManager.Instance.waveTimePanel.activeSelf == true)
+            {
+                UIManager.Instance.ToggleWaveTimePanel();
+            }
+        }
 
-        if (timeSinceLastSpawn > timeBetweenSpawns && spawningEnemies)
+        if (UIManager.Instance.waveTimePanel.activeSelf == true)
+        {
+            UIManager.Instance.UpdateWaveTimeUI((int)currentTimeToNextWave);
+        }
+
+        if (timeSinceLastSpawn > timeBetweenSpawns && spawningEnemies && currentTimeToNextWave <= 0)
         {
             timeSinceLastSpawn = 0f;
             /*do
@@ -53,12 +73,12 @@ public class WaveSystem : MonoBehaviour
                 waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave--;
             }
 
-            if (EnemiesInWave() <= 0)
+            if (EnemiesInWave() <= 0 && GameManager.Instance.enemyCount == 0)
             {
                 NextWave();
             }
 
-            if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave <= 0)
+            if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave <= 0 && currentEnemy < waves[currentWave].EnemiesToSpawn.Length - 1)
             {
                 currentEnemy++;
             }
@@ -81,7 +101,10 @@ public class WaveSystem : MonoBehaviour
             winScreen.SetActive(true);
             return;
         }*/
+        currentEnemy = 0;
         timeBetweenSpawns = waveTime / EnemiesInWave();
+        currentTimeToNextWave = timeToNextWave;
+        UIManager.Instance.ToggleWaveTimePanel();
     }
 
     int EnemiesInWave()
@@ -98,6 +121,8 @@ public class WaveSystem : MonoBehaviour
     {
         GameObject spawnedEnemy = Instantiate(Enemy, portal);
         spawnedEnemy.transform.parent = null;
+        GameManager.Instance.enemyCount++;
     }
 
+    
 }
