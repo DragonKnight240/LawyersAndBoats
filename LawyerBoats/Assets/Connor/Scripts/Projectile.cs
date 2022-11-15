@@ -18,6 +18,7 @@ public class Projectile : MonoBehaviour
 
     public int electricTargets = 1; // additional targets to zap
     public int damage; // tower collision damage
+    public int bleedDamage; // Total bleed damage
     public int bleedTime; // Total bleed time
     private int bleedRemaining;
 
