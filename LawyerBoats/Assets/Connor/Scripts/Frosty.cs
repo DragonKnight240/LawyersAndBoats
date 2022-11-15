@@ -7,19 +7,24 @@ public class Frosty : MonoBehaviour
     public float slowPercentage = 30;
     public float defrostTimer = 3;
 
-    private void OnCollisionStay(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        //print("oNsTART");
+        if (other.gameObject.tag == "Enemy")
         {
-            Enemy enemy = collision.rigidbody.GetComponent<Enemy>();
-            enemy.Speed *= slowPercentage;
+            //print("Stay");
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
+            enemy.Speed *= 1 - (slowPercentage / 100);
         }
     }
-    private void OnCollisionExit(Collision collision)
+
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.gameObject.tag == "Enemy")
+        print("oNeXIT");
+        if (other.gameObject.tag == "Enemy")
         {
-            Enemy enemy = collision.rigidbody.GetComponent<Enemy>();
+            print("Exit");
+            Enemy enemy = other.gameObject.GetComponent<Enemy>();
             Defrosting();
             enemy.Speed = enemy.maxSpeed;
         }

@@ -4932,7 +4932,7 @@ Transform:
   m_GameObject: {fileID: 3737879365165928383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.83, y: 0.29, z: 1.85}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3737879363999542204}
@@ -5018,7 +5018,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   enemyTag: Enemy
-  usesProjectile: 1
+  usesProjectile: 0
   radius: 10
   fireRate: 1
   rotateSpeed: 4

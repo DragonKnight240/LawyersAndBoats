@@ -69,7 +69,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Bleeding");
             Damage();
-            Bleeding();
+            StartCoroutine(Bleeding());
         }
         else
         {
