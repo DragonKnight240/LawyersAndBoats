@@ -110,13 +110,14 @@ public class GameManager : MonoBehaviour
 
     public void addMoney(int amt)
     {
-        UpdateMoneyUI();
         Money += amt;
+        UpdateMoneyUI();
     }
 
     public void loseMoney(int money)
     {
         Money -= money;
+        UpdateMoneyUI();
     }
 
     public int getMoney()
