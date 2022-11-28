@@ -18,6 +18,7 @@ public class Enemy : MonoBehaviour
     MeshRenderer MeshRend;
     float Timer = 0;
     public float AnimationTimer = 5;
+    internal bool isShielded = false;
 
     // Start is called before the first frame update
     void Start()
@@ -63,7 +64,14 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Health -= damage;
+        if (!isShielded)
+        {
+            Health -= damage;
+        }
+        else
+        {
+            GetComponent<Shielder>().ShieldHealth -= damage;
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
