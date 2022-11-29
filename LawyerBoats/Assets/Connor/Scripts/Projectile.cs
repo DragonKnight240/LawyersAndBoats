@@ -88,6 +88,8 @@ public class Projectile : MonoBehaviour
                 collider.GetComponent<Enemy>().TakeDamage(damage);
             }
         }
+
+        Destroy(this.gameObject);
     }
 
     void ChainLightning()
