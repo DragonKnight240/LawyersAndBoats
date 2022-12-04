@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public float maxSpeed;
     public float Speed;
     public int MaxHealth = 10;
-    int Health;
+    internal int Health;
     Rigidbody RB;
     BoxCollider Collider;
     internal Patrol PatrolComp;
@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
     float Timer = 0;
     public float AnimationTimer = 5;
     internal bool isShielded = false;
+    internal float DamageMultiplier = 1.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -66,11 +67,30 @@ public class Enemy : MonoBehaviour
     {
         if (!isShielded)
         {
-            Health -= damage;
+            Health -= Mathf.RoundToInt(damage * DamageMultiplier);
         }
         else
         {
-            GetComponent<Shielder>().ShieldHealth -= damage;
+            if (GetComponent<Shielder>())
+            {
+                GetComponent<Shielder>().ShieldHealth -= Mathf.RoundToInt(damage * DamageMultiplier);
+            }
+            else
+            {
+                GetComponent<Shielding>().ShieldStrength -= Mathf.RoundToInt(damage * DamageMultiplier);
+            }
+        }
+    }
+
+    public void IncreaseHealth(int amount)
+    {
+        if(Health + amount > MaxHealth)
+        {
+            Health = MaxHealth;
+        }
+        else
+        {
+            Health += amount;
         }
     }
 

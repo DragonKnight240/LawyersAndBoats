@@ -16,6 +16,7 @@ public class Jammer : MonoBehaviour
     {
         enemy = GetComponent<Enemy>();
         JammedTurrets = new List<BaseTurret>();
+        DamageCollision = GetComponent<SphereCollider>();
         DamageCollision.radius = JammingRadius;
 
         if(JammingTime > enemy.AnimationTimer)
