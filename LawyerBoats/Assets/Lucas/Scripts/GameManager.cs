@@ -27,6 +27,11 @@ public class GameManager : MonoBehaviour
 
     public int enemyCount = 0;
 
+    internal float DamageMultiplier = 1;
+    internal float TimerForMultiplier = 0;
+    internal float TimeForMultiplier = 0;
+    internal bool UsingMultiplier = false;
+
 
     void Awake()
     {
@@ -81,6 +86,18 @@ public class GameManager : MonoBehaviour
         {
             UpdateGameState(GameState.Quit);
         }
+
+        if(UsingMultiplier)
+        {
+            TimerForMultiplier += Time.deltaTime;
+
+            if(TimerForMultiplier >= TimeForMultiplier)
+            {
+                TimerForMultiplier = 0;
+                UsingMultiplier = false;
+                DamageMultiplier = 1;
+            }
+        }
     }
 
 
@@ -94,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void loseHealth(int health)
     {
         UpdateHealthUI();
-        Health -= health;
+        Health -= Mathf.RoundToInt(health * DamageMultiplier);
     }
 
     public int getHealth()

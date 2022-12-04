@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Patrol : MonoBehaviour
 {
-    List<GameObject> PatrolLocation;
+    internal List<GameObject> PatrolLocation;
     internal GameObject PatrolLocationsObject;
     internal GameObject PatrolTo;
     int PatrolLocationsMax = -1;
