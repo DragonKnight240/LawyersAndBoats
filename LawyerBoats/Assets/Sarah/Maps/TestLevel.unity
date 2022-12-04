@@ -1757,19 +1757,8 @@ MonoBehaviour:
   winScreen: {fileID: 0}
   waves:
   - EnemiesToSpawn:
-    - enemy: {fileID: 572059831885521524, guid: 67d968c710d82fe4a8cee9b52bb55866, type: 3}
-      enemiesInWave: 5
-    - enemy: {fileID: 97138935539885027, guid: 1584ccc628c6a3643bd00e6b902d3f4a, type: 3}
-      enemiesInWave: 5
-    - enemy: {fileID: 4364304089351448808, guid: c00028f90b2f0664296b99606c1cf756, type: 3}
-      enemiesInWave: 5
-  - EnemiesToSpawn:
-    - enemy: {fileID: 6649597763383225801, guid: 6cea86fc2b381c3418896c0a6a8e5fe2, type: 3}
-      enemiesInWave: 5
-    - enemy: {fileID: 97138935539885027, guid: 1584ccc628c6a3643bd00e6b902d3f4a, type: 3}
-      enemiesInWave: 5
-    - enemy: {fileID: 4364304089351448808, guid: c00028f90b2f0664296b99606c1cf756, type: 3}
-      enemiesInWave: 5
+    - enemy: {fileID: 7027804521537092828, guid: d81f468506f25c24589008a45366e04b, type: 3}
+      enemiesInWave: 1
   portal: {fileID: 73323992}
   timeToNextWave: 5
 --- !u!4 &511766610

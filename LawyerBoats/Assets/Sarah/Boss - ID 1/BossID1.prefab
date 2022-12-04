@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2558807680911859864}
   - component: {fileID: 2558807680911859865}
   - component: {fileID: 2558807680911859870}
-  - component: {fileID: 1136904345456943796}
   - component: {fileID: 678940091023767782}
+  - component: {fileID: 7515516283687658387}
   m_Layer: 0
   m_Name: BossID1
   m_TagString: Enemy
@@ -107,20 +107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Beeline: 0
---- !u!114 &1136904345456943796
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2558807680911859878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5dd34da8963b8f144a682419de842e7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  StopFor: 10
-  AmountOfStops: 1
 --- !u!95 &678940091023767782
 Animator:
   serializedVersion: 4
@@ -141,6 +127,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7515516283687658387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2558807680911859878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d82f7bddb815df8479a7eba8377d1e80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StopEverySeconds: 3
+  StopFor: 3
 --- !u!1 &7153565289059395328
 GameObject:
   m_ObjectHideFlags: 0
