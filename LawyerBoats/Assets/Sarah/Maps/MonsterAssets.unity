@@ -178,6 +178,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BossID2
       objectReference: {fileID: 0}
+    - target: {fileID: 5441504088633018109, guid: 0828f94443d74994c9cddaec26ede1f8, type: 3}
+      propertyPath: RadiusAbsorb
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0828f94443d74994c9cddaec26ede1f8, type: 3}
 --- !u!1001 &699858339

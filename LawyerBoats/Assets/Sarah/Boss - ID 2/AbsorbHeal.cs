@@ -11,7 +11,7 @@ public class AbsorbHeal : MonoBehaviour
     Enemy EnemyComp;
     Patrol PatrolComp;
     SphereCollider AbsorbRadius;
-    float RadiusAbsorb;
+    public float RadiusAbsorb;
     List<Enemy> enemiesInRange;
     public int TimesCanActiviate = 1;
     int TimesHasActivated = 0;
