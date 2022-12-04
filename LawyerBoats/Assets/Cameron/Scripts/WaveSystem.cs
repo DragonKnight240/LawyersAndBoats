@@ -19,6 +19,8 @@ public class WaveSystem : MonoBehaviour
     [SerializeField] float timeToNextWave = 5.0f;
     float currentTimeToNextWave = 0;
 
+    bool spawning = true;
+
     [Serializable]
     public struct Wave
     {
@@ -41,6 +43,15 @@ public class WaveSystem : MonoBehaviour
 
     void Update()
     {
+        if (!spawning)
+        {
+            return;
+        }
+        if (currentWave == amountOfWaves && EnemiesInWave() <= 0)
+        {
+            spawning = false;
+            return;
+        }
         timeSinceLastSpawn += Time.deltaTime;
         if (currentTimeToNextWave > 0)
         {
@@ -66,27 +77,27 @@ public class WaveSystem : MonoBehaviour
             {
                 rand = UnityEngine.Random.Range(0, waves[currentWave].EnemiesToSpawn.Length);
             } while (waves[currentWave].EnemiesToSpawn[rand].enemiesInWave <= 0);*/
-
             if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave > 0)
             {
                 SpawnEnemy(waves[currentWave].EnemiesToSpawn[currentEnemy].enemy);
                 waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave--;
             }
 
-            if (EnemiesInWave() <= 0 && GameManager.Instance.enemyCount == 0)
+            if (EnemiesInWave() <= 0 && GameManager.Instance.enemyCount == 0 && spawning)
             {
                 NextWave();
             }
+            else if (currentWave == amountOfWaves)
+            {
+                spawning = false;
+                return;
+            }
 
-            if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave <= 0 && currentEnemy < waves[currentWave].EnemiesToSpawn.Length - 1)
+            if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave <= 0 && currentEnemy < waves[currentWave].EnemiesToSpawn.Length - 1 && spawning)
             {
                 currentEnemy++;
             }
 
-            if (currentWave >= waves.Length)
-            {
-                spawningEnemies = false;
-            }
 
 
         }
@@ -94,7 +105,13 @@ public class WaveSystem : MonoBehaviour
 
     void NextWave()
     {
+
         ++currentWave;
+        if (currentWave == amountOfWaves)
+        {
+            spawning = false;
+            return;
+        }
         /*if (currentWave == amountOfWaves)
         {
             Time.timeScale = 0;
