@@ -27,7 +27,7 @@ public class BaseTurret : MonoBehaviour
         InvokeRepeating("FindNearbyEnemies", 0f, 0.5f);
     }
 
-    void FindNearbyEnemies()
+    public void FindNearbyEnemies()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         float smallestDistance = Mathf.Infinity;

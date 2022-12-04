@@ -30,8 +30,13 @@ public class Frosty : MonoBehaviour
         }
     }
 
-    private IEnumerator Defrosting()
+    void Defrosting()
     {
-        yield return new WaitForSeconds(defrostTimer);
+        float timer = 0;
+
+        while (timer > defrostTimer)
+        {
+            timer += Time.deltaTime;
+        }
     }
 }

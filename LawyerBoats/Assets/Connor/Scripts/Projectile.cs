@@ -14,14 +14,19 @@ public class Projectile : MonoBehaviour
     //on hit effects
     public bool explosive = false;
     public bool electrifying = false;
-    public bool bleed = false; 
+    public bool bleed = false;
+    public bool bounces = false;
 
     public int electricTargets = 1; // additional targets to zap
+
+    public int bouncesLeft = 3;
+
     public int damage; // tower collision damage
+
     public int bleedDamage; // Total bleed damage
     public int bleedTime; // Total bleed time
+    public int bleedTick; // intervals between bleed damage;
     private int bleedRemaining;
-
 
     public void Track(Transform targetPos)
     {
@@ -31,9 +36,13 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
+
         if (target == null)
         {
-            Destroy(this.gameObject); // maybe add effect here
+            if (!bounces)
+            {
+                Destroy(this.gameObject); // maybe add effect here
+            }
             return;
         }
 
@@ -69,7 +78,17 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("Bleeding");
             Damage();
-            StartCoroutine(Bleeding());
+            Bleeding();
+        }
+        else if (bounces)
+        {
+            Damage();
+
+            if (bouncesLeft > 0)
+            {
+                Ricochet();
+                Destroy(this.gameObject);
+            }
         }
         else
         {
@@ -107,22 +126,50 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    private IEnumerator Bleeding()
+    void Bleeding()
     {
         bleedRemaining = bleedTime;
 
         while (bleedRemaining > 0)
         {
-            target.GetComponent<Enemy>().TakeDamage(bleedDamage/bleedTime);
-            yield return new WaitForSeconds(1.00f); // per second
-            bleedRemaining -= 1;
+
+            float timer = bleedTick;
+
+            if (timer >= bleedTick)
+            {
+                target.GetComponent<Enemy>().TakeDamage(bleedDamage/bleedTime);
+                bleedRemaining -= 1;
+            }
+
+            timer += Time.deltaTime;
         }
+    }
+
+    void Ricochet()
+    {
+        Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius);
+        for (int i = 0; i < colliders.Length; i++)
+        {
+            if (colliders[i].gameObject == target.gameObject)
+            {
+                continue;
+            }
+            if (colliders[i].tag == "Enemy")
+            {
+                target = colliders[i].gameObject.transform;
+            }
+        }
+
+        bouncesLeft--;
     }
 
     void Damage()
     {
         target.GetComponent<Enemy>().TakeDamage(damage);
-        Destroy(this.gameObject);
+        if(!bounces || bouncesLeft == 0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     private void OnDrawGizmosSelected()

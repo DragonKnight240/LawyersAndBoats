@@ -100,8 +100,11 @@ MonoBehaviour:
   splashRadius: 2
   explosive: 0
   electrifying: 0
-  bleed: 1
+  bleed: 0
+  bounces: 1
   electricTargets: 1
-  damage: 0
-  bleedDamage: 1000
+  bouncesLeft: 3
+  damage: 1
+  bleedDamage: 1
   bleedTime: 1
+  bleedTick: 0
