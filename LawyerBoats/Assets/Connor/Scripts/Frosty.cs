@@ -9,21 +9,20 @@ public class Frosty : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //print("oNsTART");
         if (other.gameObject.tag == "Enemy")
         {
-            //print("Stay");
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            enemy.Speed *= 1 - (slowPercentage / 100);
+            if ((enemy.maxSpeed *= 1 - (slowPercentage / 100)) > enemy.Speed)
+            {
+                enemy.Speed = (enemy.maxSpeed *= 1 - (slowPercentage / 100)); // if there is a better slow don't slow.
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        print("oNeXIT");
         if (other.gameObject.tag == "Enemy")
         {
-            print("Exit");
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
             Defrosting();
             enemy.Speed = enemy.maxSpeed;

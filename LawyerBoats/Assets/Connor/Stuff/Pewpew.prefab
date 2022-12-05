@@ -101,7 +101,8 @@ MonoBehaviour:
   explosive: 0
   electrifying: 0
   bleed: 0
-  bounces: 1
+  bounces: 0
+  disease: 1
   electricTargets: 1
   bouncesLeft: 3
   damage: 1

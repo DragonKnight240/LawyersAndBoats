@@ -16,6 +16,7 @@ public class Projectile : MonoBehaviour
     public bool electrifying = false;
     public bool bleed = false;
     public bool bounces = false;
+    public bool disease = false;
 
     public int electricTargets = 1; // additional targets to zap
 
@@ -65,18 +66,15 @@ public class Projectile : MonoBehaviour
         //maybe switch statement after more effects 
         if (explosive)
         {
-            Debug.Log("Exploded");
             Explode();
         }
         else if (electrifying)
         {
-            Debug.Log("Zapped");
             Damage();
             ChainLightning();
         }
         else if (bleed)
         {
-            Debug.Log("Bleeding");
             Damage();
             Bleeding();
         }
@@ -88,6 +86,17 @@ public class Projectile : MonoBehaviour
             {
                 Destroy(this.gameObject);
             }
+        }
+        else if (disease)
+        {
+            //checkDisease();
+            if (target.GetComponent<Enemy>().sick == false)
+            {
+                target.gameObject.AddComponent<Sickness>(); // stops dupe scripts but needs a way not to shoot
+                target.GetComponent<Enemy>().sick = true;
+            }
+
+            Destroy(this.gameObject);
         }
         else
         {
@@ -164,6 +173,23 @@ public class Projectile : MonoBehaviour
 
         bouncesLeft--;
     }
+
+    //void checkDisease()
+    //{
+    //    Collider[] colliders = Physics.OverlapSphere(transform.position, gameObject.GetComponent<BaseTurret>().radius);
+    //    for (int i = 0; i < colliders.Length; i++)
+    //    {
+    //        if (colliders[i].gameObject == colliders[i].GetComponent<Enemy>().sick == true)
+    //        {
+    //            continue;
+    //        }
+    //        if (colliders[i].tag == "Enemy")
+    //        {
+    //            target = colliders[i].gameObject.transform;
+    //            break;
+    //        }
+    //    }
+    //}
 
     void Damage()
     {
