@@ -21,5 +21,6 @@ public class LookAtCamera : MonoBehaviour
     void LateUpdate()
     {
         transform.LookAt(camera.transform);
+        transform.Rotate(0, 180, 0);
     }
 }

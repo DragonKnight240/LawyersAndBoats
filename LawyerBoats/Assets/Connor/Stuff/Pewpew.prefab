@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  splashRadius: 2
+  splashRadius: 30
   explosive: 0
   electrifying: 0
   bleed: 0

@@ -83,10 +83,9 @@ public class Projectile : MonoBehaviour
         else if (bounces)
         {
             Damage();
-
-            if (bouncesLeft > 0)
+            Ricochet();
+            if (bouncesLeft <= 0)
             {
-                Ricochet();
                 Destroy(this.gameObject);
             }
         }
@@ -156,9 +155,10 @@ public class Projectile : MonoBehaviour
             {
                 continue;
             }
-            if (colliders[i].tag == "Enemy")
+            else if (colliders[i].tag == "Enemy")
             {
                 target = colliders[i].gameObject.transform;
+                break;
             }
         }
 

@@ -18,12 +18,13 @@ public class UpdateDamageNumber : MonoBehaviour
         
     }
 
-    void SetDamageNum(int dmg)
+    public void SetDamageNum(int dmg)
     {
         damage = dmg;
+        damageTxt.text = dmg.ToString();
     }
 
-    int GetDamageNum()
+    public int GetDamageNum()
     {
         return damage;
     }

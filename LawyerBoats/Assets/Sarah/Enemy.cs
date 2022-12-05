@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     public float AnimationTimer = 5;
     internal bool isShielded = false;
     internal float DamageMultiplier = 1.0f;
+    public GameObject goldText;
+    [SerializeField] float goldTextYOffset = 4.0f;
+    [SerializeField] GameObject DamageNumPrefab;
+    [SerializeField] HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +34,7 @@ public class Enemy : MonoBehaviour
         Health = MaxHealth;
         PatrolComp = GetComponent<Patrol>();
         maxSpeed = Speed;
+        healthBar.SetMaxHealth(MaxHealth);
     }
 
     // Update is called once per frame
@@ -53,7 +58,7 @@ public class Enemy : MonoBehaviour
         {
             Timer += Time.deltaTime;
 
-            if(Timer >= AnimationTimer)
+            if (Timer >= AnimationTimer)
             {
 
                 GameManager.Instance.addMoney(Money);
@@ -62,9 +67,14 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
     public void TakeDamage(int damage)
     {
+        if(DamageNumPrefab != null)
+        {
+            GameObject dmgNumObj = Instantiate(DamageNumPrefab, transform.position, transform.rotation);
+            dmgNumObj.transform.GetChild(0).GetComponent<UpdateDamageNumber>().SetDamageNum(damage);
+        }
+        
         if (!isShielded)
         {
             Health -= Mathf.RoundToInt(damage * DamageMultiplier);
@@ -80,6 +90,11 @@ public class Enemy : MonoBehaviour
                 GetComponent<Shielding>().ShieldStrength -= Mathf.RoundToInt(damage * DamageMultiplier);
             }
         }
+        if (Health <= 0)
+        {
+            ShowGoldText(Money.ToString());
+        }
+        healthBar.SetHealth(Health);
     }
 
     public void IncreaseHealth(int amount)
@@ -101,6 +116,16 @@ public class Enemy : MonoBehaviour
             GameManager.Instance.enemyCount--;
             GameManager.Instance.loseHealth(Damage);
             Destroy(this.gameObject);
+        }
+    }
+
+    void ShowGoldText(string text)
+    {
+        if (goldText)
+        {
+            Vector3 pos = new Vector3(transform.position.x, transform.position.y + goldTextYOffset, transform.position.z);
+            GameObject prefab = Instantiate(goldText, pos, Quaternion.identity);
+            prefab.GetComponent<TextMesh>().text = text;
         }
     }
 }
