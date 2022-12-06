@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Sickness : MonoBehaviour
 {
-    public float spreadTime = 3;
+    public float spreadTime = 1;
     public int spreadRadius = 11;
     public int damageTick = 1;
     bool ready = false;

@@ -6,14 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Cameron/Scenes/CamsTestLevel.unity
-    guid: 40905182c03408548a8171bea8617bad
-    path: Assets/Scenes/WinScreen.unity
-    guid: fdbb72505f3a62b4cb3857c81814191c
-  - enabled: 1
-    path: Assets/Scenes/GameManager.unity
-    guid: ddf61a5b79691d54ab27e61302b586ea
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: aa329a3910713834d8e4137da3ec8a60
+    path: Assets/Connor/Scenes/Level2.unity
+    guid: 60d5797ba96b4644fb9a91ddcc121b79
   m_configObjects: {}
