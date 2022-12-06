@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 572059831885521483}
   - component: {fileID: 572059831885521484}
   - component: {fileID: 8779701245643573060}
+  - component: {fileID: 4575127284028358595}
   m_Layer: 0
   m_Name: SupportEnemy
   m_TagString: Enemy
@@ -139,6 +140,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TimeForIncreasedDamage: 5
   DamageMultipledBy: 2
+--- !u!95 &4575127284028358595
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572059831885521524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: f3a9d63130d316f4fa89c717a14a4ec8, type: 3}
+  m_Controller: {fileID: 9100000, guid: accad05a7787f034aa9bff2c874520b2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2807527323198176481
 GameObject:
   m_ObjectHideFlags: 0

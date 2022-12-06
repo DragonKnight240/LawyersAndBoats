@@ -35,6 +35,7 @@ public class Patrol : MonoBehaviour
         if (Beeline)
         {
             Base = GameObject.FindGameObjectWithTag("Base");
+            transform.LookAt(Base.transform);
         }
 
         if (PatrolLocation != null)
