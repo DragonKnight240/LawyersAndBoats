@@ -11,17 +11,6 @@ public class Sickness : MonoBehaviour
 
     private float timer = 0;
 
-    //void Awake()
-    //{
-
-    //}
-
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         time();
