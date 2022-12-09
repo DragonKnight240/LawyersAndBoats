@@ -36,6 +36,10 @@ public class BaseTurret : MonoBehaviour
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
+            if (enemy.GetComponent<Enemy>().sick == true)
+            {
+                continue;
+            }
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
             if (distance < smallestDistance)

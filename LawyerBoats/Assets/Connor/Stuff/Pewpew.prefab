@@ -97,15 +97,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  splashRadius: 30
+  splashRadius: 0
   explosive: 0
   electrifying: 0
   bleed: 0
-  bounces: 1
+  bounces: 0
   disease: 0
-  electricTargets: 1
-  bouncesLeft: 3
-  damage: 1
-  bleedDamage: 1
-  bleedTime: 1
+  stuns: 0
+  electricTargets: 0
+  bouncesLeft: 0
+  damage: 5
+  bleedDamage: 0
+  bleedTime: 0
   bleedTick: 0
+  stunTime: 0

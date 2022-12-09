@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     private Transform target;
+    private Vector3 lastPos;
 
     private int targetsZapped;
 
@@ -17,6 +18,7 @@ public class Projectile : MonoBehaviour
     public bool bleed = false;
     public bool bounces = false;
     public bool disease = false;
+    public bool stuns = false;
 
     public int electricTargets = 1; // additional targets to zap
 
@@ -27,7 +29,8 @@ public class Projectile : MonoBehaviour
     public int bleedDamage; // Total bleed damage
     public int bleedTime; // Total bleed time
     public int bleedTick; // intervals between bleed damage;
-    private int bleedRemaining;
+    public float stunTime; // stun duration;
+    private int bleedRemaining; // ticks left
 
     public void Track(Transform targetPos)
     {
@@ -37,28 +40,29 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
+        if (target != null)
+        {
+            lastPos = target.position;
+        }
 
         if (target == null)
         {
             if (!bounces)
             {
-                Destroy(this.gameObject); // maybe add effect here
+                Move(lastPos);
+                if (transform.position == lastPos)
+                {
+                    if (explosive)
+                    {
+                        Explode();
+                    }
+                    Destroy(this.gameObject); // maybe add effect here
+                }
             }
             return;
         }
-
-        Vector3 direction = target.position - transform.position;
-        float distanceUpdate = speed * Time.deltaTime;
-
-        if (direction.magnitude <= distanceUpdate)
-        {
-            //enemy hit
-            Hit();
-            return;
-        }
-
-        transform.Translate(direction.normalized * distanceUpdate, Space.World);
-
+        Debug.Log("premove");
+        Move(target.position);
     }
 
     void Hit()
@@ -98,9 +102,13 @@ public class Projectile : MonoBehaviour
 
             Destroy(this.gameObject);
         }
+        else if (stuns)
+        {
+            Stun();
+            Damage();
+        }
         else
         {
-            Debug.Log("Normal Hit");
             Damage();
         }
     }
@@ -174,22 +182,11 @@ public class Projectile : MonoBehaviour
         bouncesLeft--;
     }
 
-    //void checkDisease()
-    //{
-    //    Collider[] colliders = Physics.OverlapSphere(transform.position, gameObject.GetComponent<BaseTurret>().radius);
-    //    for (int i = 0; i < colliders.Length; i++)
-    //    {
-    //        if (colliders[i].gameObject == colliders[i].GetComponent<Enemy>().sick == true)
-    //        {
-    //            continue;
-    //        }
-    //        if (colliders[i].tag == "Enemy")
-    //        {
-    //            target = colliders[i].gameObject.transform;
-    //            break;
-    //        }
-    //    }
-    //}
+    void Stun()
+    {
+        target.gameObject.AddComponent<Stun>();
+        target.gameObject.GetComponent<Stun>().stunTime = stunTime;
+    }
 
     void Damage()
     {
@@ -198,6 +195,22 @@ public class Projectile : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+    }
+    
+    void Move(Vector3 tarpos)
+    {
+        Vector3 direction = tarpos - transform.position;
+        float distanceUpdate = speed * Time.deltaTime;
+        Debug.Log("pre hit");
+        if (direction.magnitude <= distanceUpdate)
+        {
+            //enemy hit
+            Hit();
+            Debug.Log("posthit");
+            return;
+        }
+
+        transform.Translate(direction.normalized * distanceUpdate, Space.World);
     }
 
     private void OnDrawGizmosSelected()
