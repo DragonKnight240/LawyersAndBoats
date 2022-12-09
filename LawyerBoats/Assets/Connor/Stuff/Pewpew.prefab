@@ -102,9 +102,10 @@ MonoBehaviour:
   electrifying: 0
   bleed: 0
   bounces: 1
+  disease: 0
   electricTargets: 1
-  bouncesLeft: 3
-  damage: 1
+  bouncesLeft: 5
+  damage: 3
   bleedDamage: 1
   bleedTime: 1
   bleedTick: 0

@@ -2704,7 +2704,7 @@ Animator:
   m_GameObject: {fileID: 2427209429542546400}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: c32a798d5b32a2a498011b3ad3a31c54, type: 3}
-  m_Controller: {fileID: 9100000, guid: 31c6993ef0616074ebb83fba64db4df3, type: 2}
+  m_Controller: {fileID: 9100000, guid: b9cd41ebf5496f146b1c93b746c2bf79, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2732,6 +2732,10 @@ MonoBehaviour:
   Damage: 2
   Money: 0
   AnimationTimer: 5
+  goldText: {fileID: 0}
+  goldTextYOffset: 4
+  DamageNumPrefab: {fileID: 0}
+  healthBar: {fileID: 0}
 --- !u!114 &4159111922249659074
 MonoBehaviour:
   m_ObjectHideFlags: 0

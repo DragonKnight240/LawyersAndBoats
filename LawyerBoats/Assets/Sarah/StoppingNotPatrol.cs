@@ -24,10 +24,13 @@ public class StoppingNotPatrol : MonoBehaviour
     {
         if(isStopped)
         {
+            StopForTimer += Time.deltaTime;
+
             if(StopFor <= StopForTimer)
             {
                 EnemyComp.shouldMove = true;
                 isStopped = false;
+                StopForTimer = 0;
             }
         }
         else
@@ -38,6 +41,7 @@ public class StoppingNotPatrol : MonoBehaviour
             {
                 EnemyComp.shouldMove = false;
                 isStopped = true;
+                StopEveryTimer = 0;
             }
         }
     }

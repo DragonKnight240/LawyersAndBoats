@@ -15,6 +15,7 @@ public class Enemy : MonoBehaviour
     public int Money;
     internal bool isAlive = true;
     internal bool shouldMove = true;
+    public bool sick = false;
     MeshRenderer MeshRend;
     float Timer = 0;
     public float AnimationTimer = 5;
