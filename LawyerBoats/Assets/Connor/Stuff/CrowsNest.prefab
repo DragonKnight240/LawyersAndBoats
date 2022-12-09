@@ -115,12 +115,12 @@ MonoBehaviour:
   enemyTag: Enemy
   usesProjectile: 1
   radius: 30
-  fireRate: 2
+  fireRate: 0.2
   rotateSpeed: 4
   projectileObject: {fileID: 2511803674895871298, guid: 06119afe0e157b140bc3fdfc7a7a5ce6, type: 3}
   projectileOrigin: {fileID: 5303958736227782314}
   towerRotate: {fileID: 5303958735245355698}
-  damage: 10
+  damage: 3
   cost: 5
 --- !u!1 &5303958736227782309
 GameObject:

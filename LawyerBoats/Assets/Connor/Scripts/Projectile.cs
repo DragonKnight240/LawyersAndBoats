@@ -19,17 +19,21 @@ public class Projectile : MonoBehaviour
     public bool bounces = false;
     public bool disease = false;
     public bool stuns = false;
+    public bool slows = false;
 
     public int electricTargets = 1; // additional targets to zap
 
     public int bouncesLeft = 3;
 
+    [HideInInspector]
     public int damage; // tower collision damage
 
     public int bleedDamage; // Total bleed damage
     public int bleedTime; // Total bleed time
     public int bleedTick; // intervals between bleed damage;
     public float stunTime; // stun duration;
+    public float slowTime; // slow duration;
+    public float slowPercentage; // slow duration;
     private int bleedRemaining; // ticks left
 
     public void Track(Transform targetPos)
@@ -105,6 +109,11 @@ public class Projectile : MonoBehaviour
         else if (stuns)
         {
             Stun();
+            Damage();
+        }
+        else if (slows)
+        {
+            Slow();
             Damage();
         }
         else
@@ -186,6 +195,13 @@ public class Projectile : MonoBehaviour
     {
         target.gameObject.AddComponent<Stun>();
         target.gameObject.GetComponent<Stun>().stunTime = stunTime;
+    }
+
+    void Slow()
+    {
+        target.gameObject.AddComponent<Slowonhit>();
+        target.gameObject.GetComponent<Slowonhit>().slowTime = slowTime;
+        target.gameObject.GetComponent<Slowonhit>().slowPercentage = slowPercentage;
     }
 
     void Damage()
