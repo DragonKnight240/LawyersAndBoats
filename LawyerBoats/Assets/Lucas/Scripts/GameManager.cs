@@ -98,6 +98,11 @@ public class GameManager : MonoBehaviour
                 DamageMultiplier = 1;
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            UIManager.Instance.TogglePauseMenu();
+        }
     }
 
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -11,6 +12,8 @@ public class UIManager : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI waveTimeUI;
     public GameObject waveTimePanel;
+
+    [SerializeField] GameObject pauseMenu;
 
     void Awake()
     {
@@ -40,5 +43,23 @@ public class UIManager : MonoBehaviour
         waveTimeUI.text = "Time to next wave: " + amt;
     }
     
-    
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("menu");
+    }
+
+    public void OptionsMenu()
+    {
+        SceneManager.LoadScene("OptionsMenu");
+    }
+
+    public void LevelSelect()
+    {
+        SceneManager.LoadScene("LevelSelect");
+    }
+
+    public void TogglePauseMenu()
+    {
+        pauseMenu.SetActive(!pauseMenu.activeSelf);
+    }
 }
