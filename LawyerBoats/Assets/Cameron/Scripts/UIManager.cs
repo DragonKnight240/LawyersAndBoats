@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject waveTimePanel;
 
     [SerializeField] GameObject pauseMenu;
+    public GameObject optionsMenu;
 
     void Awake()
     {
@@ -42,24 +43,33 @@ public class UIManager : MonoBehaviour
     {
         waveTimeUI.text = "Time to next wave: " + amt;
     }
-    
-    public void MainMenu()
-    {
-        SceneManager.LoadScene("menu");
-    }
-
-    public void OptionsMenu()
-    {
-        SceneManager.LoadScene("OptionsMenu");
-    }
-
-    public void LevelSelect()
-    {
-        SceneManager.LoadScene("LevelSelect");
-    }
 
     public void TogglePauseMenu()
     {
         pauseMenu.SetActive(!pauseMenu.activeSelf);
+    }
+
+    public void ToggleOptionsMenu()
+    {
+        optionsMenu.SetActive(!optionsMenu.activeSelf);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void ToggleTime()
+    {
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        else
+            Time.timeScale = 0;
+    }
+
+    public void Level1()
+    {
+        SceneManager.LoadScene("CamsTestLevel");
+        GameManager.Instance.State = GameState.Game;
     }
 }

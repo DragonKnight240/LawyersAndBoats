@@ -26,7 +26,7 @@ public class Tile : MonoBehaviour
 
     void OnMouseOver()
     {
-        if (attachedTower == null)
+        if (attachedTower == null && Time.timeScale == 1)
         {
             if(!highlighted)
             {
@@ -50,7 +50,7 @@ public class Tile : MonoBehaviour
     {
         if(gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost() > 0)
         {
-            if (attachedTower == null)
+            if (attachedTower == null && Time.timeScale == 1)
             {
                 gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost());
                 attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);

@@ -8,6 +8,8 @@ public enum GameState
     Menu,
     Game,
     Lose,
+    Options,
+    LevelSelect,
     Quit
 }
 public class GameManager : MonoBehaviour
@@ -33,25 +35,31 @@ public class GameManager : MonoBehaviour
     internal bool UsingMultiplier = false;
 
 
+
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        Init();
         if (_instance != null && _instance != this)
         {
+            _instance.healthText = healthText;
+            _instance.moneyText = moneyText;
+            _instance.startingMoney = startingMoney;
+            _instance.Init();
             Destroy(this.gameObject);
         }
         else
         {
             _instance = this;
         }
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void Init()
+    public void Init()
     {
-        Money = startingMoney;
-        UpdateGameState(State);
-        UpdateMoneyUI();
+        if (State == GameState.Game)
+        {
+            Money = startingMoney;
+            UpdateMoneyUI();
+        }
     }
 
 
@@ -66,10 +74,15 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.Game:
-                SceneManager.LoadScene("MainScene");
                 break;
             case GameState.Lose:
                 SceneManager.LoadScene("GameOver");
+                break;
+            case GameState.LevelSelect:
+                SceneManager.LoadScene("LevelSelect");
+                break;
+            case GameState.Options:
+                SceneManager.LoadScene("OptionsMenu");
                 break;
             case GameState.Quit:
                 Application.Quit();
@@ -86,22 +99,25 @@ public class GameManager : MonoBehaviour
         {
             UpdateGameState(GameState.Quit);
         }
-
-        if(UsingMultiplier)
+        if(State == GameState.Game)
         {
-            TimerForMultiplier += Time.deltaTime;
-
-            if(TimerForMultiplier >= TimeForMultiplier)
+            if (UsingMultiplier)
             {
-                TimerForMultiplier = 0;
-                UsingMultiplier = false;
-                DamageMultiplier = 1;
-            }
-        }
+                TimerForMultiplier += Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            UIManager.Instance.TogglePauseMenu();
+                if (TimerForMultiplier >= TimeForMultiplier)
+                {
+                    TimerForMultiplier = 0;
+                    UsingMultiplier = false;
+                    DamageMultiplier = 1;
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.P) && !UIManager.Instance.optionsMenu.activeSelf)
+            {
+                UIManager.Instance.TogglePauseMenu();
+                ToggleTime();
+            }
         }
     }
 
@@ -155,6 +171,20 @@ public class GameManager : MonoBehaviour
     public void UpdateMoneyUI()
     {
         moneyText.text = "Coins: " + Money;
+    }
+
+    public void ToggleTime()
+    {
+        if (Time.timeScale == 0)
+            Time.timeScale = 1;
+        else
+            Time.timeScale = 0;
+    }
+
+    public void Level1()
+    {
+        GameManager.Instance.State = GameState.Game;
+        SceneManager.LoadScene("CamsTestLevel");
     }
 }
 
