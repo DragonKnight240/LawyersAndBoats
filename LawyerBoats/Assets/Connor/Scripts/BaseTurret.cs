@@ -19,6 +19,8 @@ public class BaseTurret : MonoBehaviour
     public Transform towerRotate;
 
     public ParticleSystem ParticleSystemObject;
+    public UpgradeSystem.BaseTowerNames BaseTower;
+    public UpgradeSystem.BaseTowerNames TowerName;
 
     public int damage = 10;
 
@@ -33,6 +35,7 @@ public class BaseTurret : MonoBehaviour
         if(transform.childCount > 1)
         {
             ParticleSystemObject = transform.GetChild(1).GetComponent<ParticleSystem>();
+            ParticleSystemObject.Stop();
         }
     }
 
