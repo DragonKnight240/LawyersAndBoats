@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
-    [SerializeField] GameObject attachedTower;
+    [SerializeField] internal GameObject attachedTower;
     [SerializeField] public bool highlighted = false;
     Material startingMat;
     MeshRenderer meshRenderer;
@@ -48,13 +48,19 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost() > 0)
+        if (attachedTower == null)
         {
-            if (attachedTower == null)
+            if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost() > 0)
             {
+
                 gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost());
                 attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
             }
+        }
+        else
+        {
+            UpgradeSystem.Instance.SelectedTile = this;
+            UpgradeSystem.Instance.ChangeButtons();
         }
         
     }
