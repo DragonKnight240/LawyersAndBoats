@@ -25,7 +25,26 @@ public class UpgradeSystem : MonoBehaviour
         CrowNest,
         FrostTower,
         MagicTower,
-        MortorTower
+        MortorTower,
+        GlaiveTower,
+        RichochetTower,
+        ArbalistTower,
+        JavelinThrower,
+        Epidemic,
+        CannisterCannon,
+        MOAB,
+        Artillary,
+        ArcaneBrilliance,
+        ArcaneAdept,
+        MasterOfElements,
+        Shamen,
+        IcicleLauncher,
+        Hailstone,
+        AbsoluteZero,
+        Snowstorm,
+        DamageAura,
+        AttackSpeedAura,
+        Aura
     }
 
     internal GameObject SelectedTower;
@@ -130,10 +149,7 @@ public class UpgradeSystem : MonoBehaviour
 
     public void ChangeButtons()
     {
-        CrowNestUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
-        FrostTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
-        MagicTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
-        MortorTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
+        HideAllUpgradePanels();
 
         GameObject CurrentTower = SelectedTile.attachedTower;
         TreeAndUpgrade Tree = GetUpgradeTree(CurrentTower);
@@ -199,5 +215,13 @@ public class UpgradeSystem : MonoBehaviour
             CurrentPanel.GetComponent<UpgradeMenuChange>().MainPanel.SetActive(false);
         }
         
+    }
+
+    public void HideAllUpgradePanels()
+    {
+        CrowNestUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
+        FrostTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
+        MagicTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
+        MortorTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

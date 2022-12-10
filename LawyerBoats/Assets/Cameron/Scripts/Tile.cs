@@ -48,6 +48,8 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
+        UpgradeSystem.Instance.HideAllUpgradePanels();
+
         if (attachedTower == null)
         {
             if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost() > 0)
