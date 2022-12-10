@@ -1757,8 +1757,8 @@ MonoBehaviour:
   winScreen: {fileID: 0}
   waves:
   - EnemiesToSpawn:
-    - enemy: {fileID: 7027804521537092828, guid: d81f468506f25c24589008a45366e04b, type: 3}
-      enemiesInWave: 1
+    - enemy: {fileID: 97138935539885027, guid: 1584ccc628c6a3643bd00e6b902d3f4a, type: 3}
+      enemiesInWave: 10
   portal: {fileID: 73323992}
   timeToNextWave: 5
 --- !u!4 &511766610
