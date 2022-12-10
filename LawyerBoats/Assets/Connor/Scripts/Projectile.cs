@@ -60,12 +60,11 @@ public class Projectile : MonoBehaviour
                     {
                         Explode();
                     }
-                    Destroy(this.gameObject); // maybe add effect here
+                    Destroy(this.gameObject);
                 }
             }
             return;
         }
-        Debug.Log("premove");
         Move(target.position);
     }
 
@@ -217,12 +216,10 @@ public class Projectile : MonoBehaviour
     {
         Vector3 direction = tarpos - transform.position;
         float distanceUpdate = speed * Time.deltaTime;
-        Debug.Log("pre hit");
         if (direction.magnitude <= distanceUpdate)
         {
             //enemy hit
             Hit();
-            Debug.Log("posthit");
             return;
         }
 
