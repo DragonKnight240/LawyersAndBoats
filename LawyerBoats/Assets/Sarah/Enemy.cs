@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     internal bool isShielded = false;
     internal float DamageMultiplier = 1.0f;
     public GameObject goldText;
+    internal Animator Anim;
     [SerializeField] float goldTextYOffset = 4.0f;
     [SerializeField] GameObject DamageNumPrefab;
     [SerializeField] HealthBar healthBar;
@@ -36,6 +37,7 @@ public class Enemy : MonoBehaviour
         PatrolComp = GetComponent<Patrol>();
         maxSpeed = Speed;
         healthBar.SetMaxHealth(MaxHealth);
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,11 +47,13 @@ public class Enemy : MonoBehaviour
         {
             if (shouldMove)
             {
+                Anim.SetTrigger("MoveTrigger");
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(PatrolComp.PatrolTo.transform.position.x, transform.position.y, PatrolComp.PatrolTo.transform.position.z), Time.deltaTime * Speed);
             }
 
             if (Health <= 0)
             {
+                Anim.SetTrigger("DeadTrigger");
                 isAlive = false;
                 transform.gameObject.tag = "Untagged";
 
@@ -73,7 +77,7 @@ public class Enemy : MonoBehaviour
         if(DamageNumPrefab != null)
         {
             GameObject dmgNumObj = Instantiate(DamageNumPrefab, transform.position, transform.rotation);
-            dmgNumObj.transform.GetChild(0).GetComponent<UpdateDamageNumber>().SetDamageNum(damage);
+            dmgNumObj.transform.GetChild(0).GetComponent<UpdateDamageNumber>().SetDamageNum(Mathf.RoundToInt(damage * DamageMultiplier));
         }
         
         if (!isShielded)
@@ -114,6 +118,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.transform.CompareTag("Base"))
         {
+            Anim.SetTrigger("AttackTrigger");
             GameManager.Instance.enemyCount--;
             GameManager.Instance.loseHealth(Damage);
             Destroy(this.gameObject);

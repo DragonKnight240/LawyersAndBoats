@@ -47,6 +47,7 @@ public class AbsorbHeal : MonoBehaviour
                 foreach(Enemy enemy in enemiesInRange)
                 {
                     EnemyComp.IncreaseHealth(enemy.Health);
+                    EnemyComp.Anim.SetTrigger("HealTrigger");
                     enemy.TakeDamage(enemy.Health);
                 }
                 isActive = false;

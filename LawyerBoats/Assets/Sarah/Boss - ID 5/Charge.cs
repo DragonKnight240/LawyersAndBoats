@@ -28,11 +28,13 @@ public class Charge : MonoBehaviour
     {
         if(IsCharging)
         {
+            EnemyComp.Anim.SetTrigger("ChargingTrigger");
             timerCharge += Time.deltaTime;
         }
 
         if(IsWornOut)
         {
+            EnemyComp.Anim.SetTrigger("WornOutTrigger");
             WornOutTimer += Time.deltaTime;
         }
 
