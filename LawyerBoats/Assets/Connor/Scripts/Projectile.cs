@@ -44,28 +44,27 @@ public class Projectile : MonoBehaviour
 
     void Update()
     {
-        if (target != null)
-        {
-            lastPos = target.position;
-        }
 
-        if (target == null)
+        Vector3 direction = lastPos - transform.position;
+        float distanceUpdate = speed * Time.deltaTime;
+
+        transform.Translate(direction.normalized * distanceUpdate, Space.World);
+
+        if (target == null || target.tag != "Enemy")
         {
-            if (!bounces)
+            if (!bounces && Vector3.Distance(lastPos, transform.position) < 0.05f)
             {
-                Move(lastPos);
-                if (transform.position == lastPos)
-                {
-                    if (explosive)
-                    {
-                        Explode();
-                    }
-                    Destroy(this.gameObject);
-                }
+                Destroy(this.gameObject); // maybe add effect here
             }
             return;
         }
-        Move(target.position);
+
+        if (direction.magnitude <= distanceUpdate && target.tag == "Enemy")
+        {
+            //enemy hit
+            Hit();
+            return;
+        }
     }
 
     void Hit()
@@ -119,6 +118,12 @@ public class Projectile : MonoBehaviour
         {
             Damage();
         }
+    }
+
+    private void LateUpdate()
+    {
+        if (target != null)
+        lastPos = target.position;
     }
 
     void Explode()
