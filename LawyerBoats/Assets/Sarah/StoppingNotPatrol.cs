@@ -28,6 +28,7 @@ public class StoppingNotPatrol : MonoBehaviour
 
             if(StopFor <= StopForTimer)
             {
+                EnemyComp.Anim.SetTrigger("StopTrigger");
                 EnemyComp.shouldMove = true;
                 isStopped = false;
                 StopForTimer = 0;

@@ -20,6 +20,10 @@ public class BaseTurret : MonoBehaviour
     public Transform towerRotate;
 
     public int baseDamage = 10;
+    public ParticleSystem ParticleSystemObject;
+    public UpgradeSystem.BaseTowerNames BaseTower;
+    public UpgradeSystem.BaseTowerNames TowerName;
+
     public int damage = 10;
 
     [SerializeField] int cost = 5;
@@ -29,6 +33,12 @@ public class BaseTurret : MonoBehaviour
     void Start()
     {
         InvokeRepeating("FindNearbyEnemies", 0f, 0.5f);
+
+        if(transform.childCount > 1)
+        {
+            ParticleSystemObject = transform.GetChild(1).GetComponent<ParticleSystem>();
+            ParticleSystemObject.Stop();
+        }
     }
 
     public void FindNearbyEnemies()
@@ -70,7 +80,20 @@ public class BaseTurret : MonoBehaviour
     void Update()
     {
         if (target == null)
+        {
+            if (ParticleSystemObject)
+            {
+                ParticleSystemObject.Stop();
+            }
             return;
+        }
+        else
+        {
+            if (ParticleSystemObject)
+            {
+                ParticleSystemObject.Play();
+            }
+        }
 
         TowerRotate();
 

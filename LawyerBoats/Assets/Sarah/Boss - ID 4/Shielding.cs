@@ -40,6 +40,7 @@ public class Shielding : MonoBehaviour
             if(TimerStagged >= TimeStaggered)
             {
                 EnemyComp.shouldMove = true;
+                EnemyComp.Anim.SetTrigger("StaggerTrigger");
                 EnemyComp.DamageMultiplier = 1;
                 isStaggered = false;
                 TimerStagged = 0;
