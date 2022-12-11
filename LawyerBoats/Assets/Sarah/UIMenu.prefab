@@ -1,5 +1,69 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &616668605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616668607}
+  - component: {fileID: 616668606}
+  m_Layer: 0
+  m_Name: UpgradeSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &616668607
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616668605}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -79.71029, y: -50.01358, z: 0}
+  m_LocalScale: {x: 0.7243096, y: 0.7243096, z: 0.7243096}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6784350085598184206}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &616668606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616668605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18553f0530b9c014e8b07f2b136fb31d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TowerUpgradeTrees:
+  - BaseTowers: {fileID: 5303958735245355689, guid: 2e05d5288d5a5ef418bc3532688223d5, type: 3}
+    TowersBranch1:
+    - {fileID: 4388877710910958945, guid: 18fe196b57844494383ea4461b13dbdc, type: 3}
+    TowersBranch2:
+    - {fileID: 3737879365165928383, guid: f04e1df08103a7e4a81e69acb41b0fc0, type: 3}
+  - BaseTowers: {fileID: 8331883683228829173, guid: 19cadf10288bb614f821cb9712611a3a, type: 3}
+    TowersBranch1: []
+    TowersBranch2: []
+  - BaseTowers: {fileID: 7213416212892604362, guid: 08bea1bc97a94aa4a942dd184207575e, type: 3}
+    TowersBranch1: []
+    TowersBranch2: []
+  - BaseTowers: {fileID: 3737879365165928383, guid: f04e1df08103a7e4a81e69acb41b0fc0, type: 3}
+    TowersBranch1: []
+    TowersBranch2: []
+  CrowNestUpgradePanel: {fileID: 6784350086719858220}
+  FrostTowerUpgradePanel: {fileID: 6784350085745806918}
+  MagicTowerUpgradePanel: {fileID: 6784350084810329160}
+  MortorTowerUpgradePanel: {fileID: 6784350086573107963}
+  AuraTowerUpgradePanel: {fileID: 0}
 --- !u!1 &6784350084751589682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1845,6 +1909,7 @@ RectTransform:
   - {fileID: 6784350084932672884}
   - {fileID: 6784350085861897872}
   - {fileID: 6784350085854174261}
+  - {fileID: 616668607}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

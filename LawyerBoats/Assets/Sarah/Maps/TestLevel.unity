@@ -926,82 +926,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6784350084795899200, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350084886926018, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350084886926018, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350084886926018, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350084886926018, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6784350084886926019, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 837828558}
-    - target: {fileID: 6784350084886926019, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085051607168, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085051607168, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085051607168, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085051607168, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6784350085051607170, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 837828558}
-    - target: {fileID: 6784350085051607170, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTower
-      objectReference: {fileID: 0}
     - target: {fileID: 6784350085581815948, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 837828558}
-    - target: {fileID: 6784350085581815948, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085581815951, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085581815951, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085581815951, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085581815951, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6784350085598184202, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_Name
       value: UIMenu
@@ -1094,30 +1030,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 837828558}
-    - target: {fileID: 6784350085620304080, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SelectTower
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085620304083, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085620304083, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085620304083, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350085620304083, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6784350086338453549, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
 --- !u!1001 &195299036
@@ -1325,11 +1237,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attachedTower: {fileID: 0}
   highlighted: 0
---- !u!1 &326700038 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6784350086719858220, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-  m_PrefabInstance: {fileID: 190111325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &349004190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2462,69 +2369,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8410508526203829375, guid: c4197bc7ab1ce4a4fb656fb4cd0743ae, type: 3}
   m_PrefabInstance: {fileID: 581389770}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &616668605
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 616668607}
-  - component: {fileID: 616668606}
-  m_Layer: 0
-  m_Name: UpgradeSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &616668606
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616668605}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18553f0530b9c014e8b07f2b136fb31d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TowerUpgradeTrees:
-  - BaseTowers: {fileID: 5303958735245355689, guid: 2e05d5288d5a5ef418bc3532688223d5, type: 3}
-    TowersBranch1:
-    - {fileID: 4388877710910958945, guid: 18fe196b57844494383ea4461b13dbdc, type: 3}
-    TowersBranch2:
-    - {fileID: 3737879365165928383, guid: f04e1df08103a7e4a81e69acb41b0fc0, type: 3}
-  - BaseTowers: {fileID: 8331883683228829173, guid: 19cadf10288bb614f821cb9712611a3a, type: 3}
-    TowersBranch1: []
-    TowersBranch2: []
-  - BaseTowers: {fileID: 7213416212892604362, guid: 08bea1bc97a94aa4a942dd184207575e, type: 3}
-    TowersBranch1: []
-    TowersBranch2: []
-  - BaseTowers: {fileID: 3737879365165928383, guid: f04e1df08103a7e4a81e69acb41b0fc0, type: 3}
-    TowersBranch1: []
-    TowersBranch2: []
-  CrowNestUpgradePanel: {fileID: 326700038}
-  FrostTowerUpgradePanel: {fileID: 1451668047}
-  MagicTowerUpgradePanel: {fileID: 971977479}
-  MortorTowerUpgradePanel: {fileID: 1115004210}
---- !u!4 &616668607
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616668605}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 442.19998, y: 220.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &617641195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4074,11 +3918,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
---- !u!1 &971977479 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6784350084810329160, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-  m_PrefabInstance: {fileID: 190111325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &979490998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4474,11 +4313,6 @@ Transform:
   m_Father: {fileID: 41918541}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1115004210 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6784350086573107963, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-  m_PrefabInstance: {fileID: 190111325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1118893740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5703,11 +5537,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8410508526203829375, guid: c4197bc7ab1ce4a4fb656fb4cd0743ae, type: 3}
   m_PrefabInstance: {fileID: 1432653088}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1451668047 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6784350085745806918, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
-  m_PrefabInstance: {fileID: 190111325}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1492327434
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6018,6 +5847,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveTimeUI: {fileID: 1179164898}
   waveTimePanel: {fileID: 1807951938}
+  pauseMenu: {fileID: 0}
+  optionsMenu: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!4 &1614395437
 Transform:
   m_ObjectHideFlags: 0

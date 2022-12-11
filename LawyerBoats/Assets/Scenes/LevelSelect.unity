@@ -643,6 +643,7 @@ MonoBehaviour:
   waveTimePanel: {fileID: 0}
   pauseMenu: {fileID: 0}
   optionsMenu: {fileID: 0}
+  loseScreen: {fileID: 0}
 --- !u!4 &475618973
 Transform:
   m_ObjectHideFlags: 0
@@ -1692,7 +1693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelNames:
   - CamsTestLevel
-  - Level2
+  - Level2Cam
   - Level3
   - Level4
   - Level5
