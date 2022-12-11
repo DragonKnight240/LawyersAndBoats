@@ -159,17 +159,18 @@ public class Projectile : MonoBehaviour
 
     void Bleeding()
     {
-        bleedRemaining = bleedTime;
+        bleedRemaining = (bleedTime / bleedTick);
 
         while (bleedRemaining > 0)
         {
 
-            float timer = bleedTick;
+            float timer = 0;
 
             if (timer >= bleedTick)
             {
                 target.GetComponent<Enemy>().TakeDamage(bleedDamage/bleedTime);
                 bleedRemaining -= 1;
+                Debug.Log("bleed");
             }
 
             timer += Time.deltaTime;
