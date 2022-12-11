@@ -34,6 +34,7 @@ public class Projectile : MonoBehaviour
     public float stunTime; // stun duration;
     public float slowTime; // slow duration;
     public float slowPercentage; // slow duration;
+    float timer = 0;
     private int bleedRemaining; // ticks left
 
     public void Track(Transform targetPos)
@@ -81,8 +82,15 @@ public class Projectile : MonoBehaviour
         }
         else if (bleed)
         {
+            if (target.GetComponent<Enemy>().bleeding == false)
+            {
+                target.gameObject.AddComponent<Bleed>();
+                Bleed bleed = gameObject.GetComponent<Bleed>();
+                bleed.tickTime = bleedTick;
+                bleed.ticksToDo = (bleedTime / bleedTick);
+                bleed.damage = (bleedDamage / bleedTime);
+            }
             Damage();
-            Bleeding();
         }
         else if (bounces)
         {
@@ -154,26 +162,6 @@ public class Projectile : MonoBehaviour
                 colliders[i].GetComponent<Enemy>().TakeDamage(damage);
                 targetsZapped++;
             }
-        }
-    }
-
-    void Bleeding()
-    {
-        bleedRemaining = (bleedTime / bleedTick);
-
-        while (bleedRemaining > 0)
-        {
-
-            float timer = 0;
-
-            if (timer >= bleedTick)
-            {
-                target.GetComponent<Enemy>().TakeDamage(bleedDamage/bleedTime);
-                bleedRemaining -= 1;
-                Debug.Log("bleed");
-            }
-
-            timer += Time.deltaTime;
         }
     }
 
