@@ -34,7 +34,10 @@ public class GameManager : MonoBehaviour
     internal float TimeForMultiplier = 0;
     internal bool UsingMultiplier = false;
 
-
+    private void OnLevelWasLoaded()
+    {
+        Init();
+    }
 
     void Awake()
     {
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
 
     public void Init()
     {
+        Time.timeScale = 1;
         if (State == GameState.Game)
         {
             Money = startingMoney;
@@ -74,6 +78,7 @@ public class GameManager : MonoBehaviour
                 break;
 
             case GameState.Game:
+                Time.timeScale = 1;
                 break;
             case GameState.Lose:
                 SceneManager.LoadScene("GameOver");
