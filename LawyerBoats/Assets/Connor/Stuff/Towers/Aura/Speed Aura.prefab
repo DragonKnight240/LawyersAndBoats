@@ -98,6 +98,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageAmpPercentage: 1.33
   atkSpdAmpPercentage: 1.33
-  auraRadius: 25
+  auraRadius: 30
   damageAura: 0
-  atkSpdAura: 0
+  atkSpdAura: 1
