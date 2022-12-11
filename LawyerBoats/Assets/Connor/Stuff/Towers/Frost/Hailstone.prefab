@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 911132096906046988}
   m_Layer: 0
   m_Name: Hailstone
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 9067361173353633674}
   towerRotate: {fileID: 9067361173353633674}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 1
+  TowerName: 17
   damage: 10
   cost: 5
 --- !u!114 &5198371971868483052

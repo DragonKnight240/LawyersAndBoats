@@ -122,6 +122,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 7606240688939840011}
   towerRotate: {fileID: 7606240688939840011}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 0
+  TowerName: 4
   damage: 5
   cost: 5
 --- !u!114 &6895171260524717308
@@ -152,7 +155,7 @@ GameObject:
   - component: {fileID: 251974436374658727}
   m_Layer: 0
   m_Name: Glaive Thrower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

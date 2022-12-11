@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7086964066164380531}
   m_Layer: 0
   m_Name: Javelin Thrower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +206,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 7065478611420094861}
   towerRotate: {fileID: 7065478611420094861}
   baseDamage: 2
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 0
+  TowerName: 7
   damage: 5
   cost: 5
 --- !u!114 &7065478611420094856

@@ -108,6 +108,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 8996181238101777301}
   towerRotate: {fileID: 8996181238101777301}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 0
+  TowerName: 0
   damage: 10
   cost: 5
 --- !u!114 &3162045823028914715
@@ -138,7 +141,7 @@ GameObject:
   - component: {fileID: 8978759966083853779}
   m_Layer: 0
   m_Name: Arcane Castle
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

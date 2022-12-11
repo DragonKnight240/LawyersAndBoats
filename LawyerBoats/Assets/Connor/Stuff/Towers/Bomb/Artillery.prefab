@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1320892131698716086}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &286715261100005988
 MeshFilter:
@@ -117,7 +117,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1320892131698716086}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5981594806864413320
 MeshFilter:
@@ -205,6 +205,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 7545128344115580524}
   towerRotate: {fileID: 7545128344115580524}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 3
+  TowerName: 11
   damage: 5
   cost: 5
 --- !u!114 &4695010957608619608
@@ -235,7 +238,7 @@ GameObject:
   - component: {fileID: 9047102302586879622}
   m_Layer: 0
   m_Name: Artillery
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -252,8 +255,8 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 3800763661202335094}
   - {fileID: 7545128344115580524}
+  - {fileID: 3800763661202335094}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

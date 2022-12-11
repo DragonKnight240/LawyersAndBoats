@@ -108,6 +108,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 1533599616968132546}
   towerRotate: {fileID: 1533599616968132546}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 1
+  TowerName: 19
   damage: 10
   cost: 5
 --- !u!114 &4022012639455191453
@@ -138,7 +141,7 @@ GameObject:
   - component: {fileID: 1520742750698600754}
   m_Layer: 0
   m_Name: Blizzard
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

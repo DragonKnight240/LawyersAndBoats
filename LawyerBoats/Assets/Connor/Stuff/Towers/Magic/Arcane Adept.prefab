@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5909416174249582509}
   m_Layer: 0
   m_Name: Arcane Adept
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 5927172752950707687}
   towerRotate: {fileID: 5927172752950707687}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 2
+  TowerName: 13
   damage: 10
   cost: 5
 --- !u!114 &3008642567084477855

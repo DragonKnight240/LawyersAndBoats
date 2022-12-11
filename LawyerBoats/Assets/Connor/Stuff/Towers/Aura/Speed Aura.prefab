@@ -101,3 +101,5 @@ MonoBehaviour:
   auraRadius: 30
   damageAura: 0
   atkSpdAura: 1
+  BaseTower: 22
+  TowerName: 21

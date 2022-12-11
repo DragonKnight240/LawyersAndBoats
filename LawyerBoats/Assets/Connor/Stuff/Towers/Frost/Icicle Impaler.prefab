@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3708621924699283933}
   m_Layer: 0
   m_Name: Icicle Impaler
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 7197612232038033496}
   towerRotate: {fileID: 7197612232038033496}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 1
+  TowerName: 16
   damage: 10
   cost: 5
 --- !u!114 &4444363371772426832

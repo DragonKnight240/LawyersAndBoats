@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6336367093303941943}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6332410676667387849
 MeshFilter:
@@ -122,6 +122,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 6332410676667387850}
   towerRotate: {fileID: 6332410676667387850}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 3
+  TowerName: 3
   damage: 10
   cost: 5
 --- !u!114 &6332410676667387701
@@ -152,7 +155,7 @@ GameObject:
   - component: {fileID: 6318702865604877563}
   m_Layer: 0
   m_Name: Mortar Cannon
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -169,8 +172,8 @@ Transform:
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6336267293950471291}
   - {fileID: 6332410676667387850}
+  - {fileID: 6336267293950471291}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,7 +258,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6336367093303941943}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6312156675143750937
 MeshFilter:

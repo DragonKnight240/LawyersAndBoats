@@ -108,6 +108,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 2659518041481775092}
   towerRotate: {fileID: 2659518041481775092}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 1
+  TowerName: 1
   damage: 10
   cost: 5
 --- !u!114 &6837250453060034597
@@ -138,7 +141,7 @@ GameObject:
   - component: {fileID: 2646483058337407449}
   m_Layer: 0
   m_Name: Frost Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

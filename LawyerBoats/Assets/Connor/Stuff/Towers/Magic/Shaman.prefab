@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3018868772451401021}
   m_Layer: 0
   m_Name: Shaman
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 7052261786205021801}
   towerRotate: {fileID: 7052261786205021801}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 2
+  TowerName: 15
   damage: 10
   cost: 5
 --- !u!114 &928927066552933397

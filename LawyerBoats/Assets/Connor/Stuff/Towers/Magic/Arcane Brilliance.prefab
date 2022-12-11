@@ -108,6 +108,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 6410732794118490116}
   towerRotate: {fileID: 6410732794118490116}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 2
+  TowerName: 12
   damage: 10
   cost: 5
 --- !u!114 &3549872925668217951
@@ -138,7 +141,7 @@ GameObject:
   - component: {fileID: 6389469385096918154}
   m_Layer: 0
   m_Name: Arcane Brilliance
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

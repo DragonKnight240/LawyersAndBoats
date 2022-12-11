@@ -12,9 +12,15 @@ public class Aura : MonoBehaviour
     public bool damageAura = false;
     public bool atkSpdAura = false;
 
+    public UpgradeSystem.BaseTowerNames BaseTower;
+    public UpgradeSystem.BaseTowerNames TowerName;
+
     void Start()
     {
-        InvokeRepeating("checkBuffs", 0f, 0.5f);
+        if (damageAura || atkSpdAura)
+        {
+            InvokeRepeating("checkBuffs", 0f, 0.5f);
+        }
     }
 
     void checkBuffs()

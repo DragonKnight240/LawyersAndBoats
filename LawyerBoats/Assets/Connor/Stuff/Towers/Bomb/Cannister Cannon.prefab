@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2079198673101934043}
   m_Layer: 0
   m_Name: Cannister Cannon
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1401982669794544367}
   - {fileID: 8461966617279259695}
+  - {fileID: 1401982669794544367}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -116,7 +116,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3440630540009465690}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7416501045427557792
 MeshFilter:
@@ -202,7 +202,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3440630540009465690}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &8461966617279259664
 MeshFilter:
@@ -290,6 +290,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 8461966617279259695}
   towerRotate: {fileID: 8461966617279259695}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 3
+  TowerName: 9
   damage: 5
   cost: 5
 --- !u!114 &8461966617279259668

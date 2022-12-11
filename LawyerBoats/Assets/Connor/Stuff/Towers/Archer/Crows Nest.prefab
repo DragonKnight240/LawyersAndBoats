@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1615990634981280952}
   m_Layer: 0
   m_Name: Crows Nest
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +206,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 8690352985020701838}
   towerRotate: {fileID: 8690352985020701838}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 0
+  TowerName: 0
   damage: 5
   cost: 5
 --- !u!114 &8709820754803042831

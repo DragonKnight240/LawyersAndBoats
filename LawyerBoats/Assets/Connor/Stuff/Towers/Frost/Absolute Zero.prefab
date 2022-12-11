@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4003637757608146142}
   m_Layer: 0
   m_Name: Absolute Zero
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 4025501823393395679}
   towerRotate: {fileID: 4025501823393395679}
   baseDamage: 10
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 1
+  TowerName: 18
   damage: 10
   cost: 5
 --- !u!114 &2804003970089402193

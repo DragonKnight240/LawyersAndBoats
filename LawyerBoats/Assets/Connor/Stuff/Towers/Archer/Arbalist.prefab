@@ -122,6 +122,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 1842066398455116850}
   towerRotate: {fileID: 1842066398455116850}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 0
+  TowerName: 6
   damage: 5
   cost: 5
 --- !u!114 &1264655836809984700
@@ -261,6 +264,9 @@ MonoBehaviour:
   projectileOrigin: {fileID: 2430511222919340062}
   towerRotate: {fileID: 2430511222919340062}
   baseDamage: 5
+  ParticleSystemObject: {fileID: 0}
+  BaseTower: 0
+  TowerName: 6
   damage: 5
   cost: 5
 --- !u!114 &2430511222919340261
@@ -291,7 +297,7 @@ GameObject:
   - component: {fileID: 2443232178983718135}
   m_Layer: 0
   m_Name: Arbalist
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
