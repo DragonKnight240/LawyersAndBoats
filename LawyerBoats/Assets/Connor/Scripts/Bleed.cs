@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Bleed : MonoBehaviour
 {
-    public int tickTime = 1;
-    public int ticksToDo = 0;
-    public int tickCount = 0;
+    public int tickTime;
+    public int ticksToDo;
+    public int tickCount;
     bool ready = false;
 
     private float timer = 0;
@@ -35,8 +35,15 @@ public class Bleed : MonoBehaviour
 
     void BleedTick(int damage)
     {
-        gameObject.GetComponent<Enemy>().TakeDamage(damage);
-        tickCount++;
+        if (gameObject.GetComponent<Enemy>().Health > 0)
+        {
+            gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            tickCount++;
+        }
+        else
+        {
+            Destroy(this);
+        }
     }
 
     void time()

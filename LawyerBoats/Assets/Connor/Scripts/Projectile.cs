@@ -28,14 +28,13 @@ public class Projectile : MonoBehaviour
     [HideInInspector]
     public int damage; // tower collision damage
 
-    public int bleedDamage; // Total bleed damage
-    public int bleedTime; // Total bleed time
-    public int bleedTick; // intervals between bleed damage;
+    public int bleedDamage = 10; // Total bleed damage
+    public int bleedTime = 10; // Total bleed time
+    public int bleedTick = 1; // intervals between bleed damage;
     public float stunTime; // stun duration;
     public float slowTime; // slow duration;
     public float slowPercentage; // slow duration;
-    float timer = 0;
-    private int bleedRemaining; // ticks left
+
 
     public void Track(Transform targetPos)
     {
@@ -85,7 +84,7 @@ public class Projectile : MonoBehaviour
             if (target.GetComponent<Enemy>().bleeding == false)
             {
                 target.gameObject.AddComponent<Bleed>();
-                Bleed bleed = gameObject.GetComponent<Bleed>();
+                Bleed bleed = target.GetComponent<Bleed>();
                 bleed.tickTime = bleedTick;
                 bleed.ticksToDo = (bleedTime / bleedTick);
                 bleed.damage = (bleedDamage / bleedTime);

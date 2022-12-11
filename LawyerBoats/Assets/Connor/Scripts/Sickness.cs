@@ -17,7 +17,6 @@ public class Sickness : MonoBehaviour
 
         if (ready)
         {
-            Debug.Log("works");
             Decay(damageTick);
             Pandemic();
             ready = false;
