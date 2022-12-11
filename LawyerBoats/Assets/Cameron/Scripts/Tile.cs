@@ -48,6 +48,24 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
+        if (!UpgradeSystem.Instance.CurrentPanel)
+        {
+            TowerLogic();
+            print("Not Set");
+        }
+        else if(!UpgradeSystem.Instance.CurrentPanel.transform.GetChild(0).gameObject.activeInHierarchy)
+        {
+            TowerLogic();
+            print("Not Active");
+        }
+        else
+        {
+            print("Active");
+        }
+    }
+
+    void TowerLogic()
+    {
         UpgradeSystem.Instance.HideAllUpgradePanels();
 
         if (attachedTower == null && Time.timeScale == 1)
@@ -64,6 +82,5 @@ public class Tile : MonoBehaviour
             UpgradeSystem.Instance.SelectedTile = this;
             UpgradeSystem.Instance.ChangeButtons();
         }
-        
     }
 }

@@ -53,7 +53,7 @@ public class UpgradeSystem : MonoBehaviour
 
     public static UpgradeSystem Instance;
     internal Tile SelectedTile;
-    GameObject CurrentPanel;
+    internal GameObject CurrentPanel;
 
     public GameObject CrowNestUpgradePanel;
     public GameObject FrostTowerUpgradePanel;
