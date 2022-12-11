@@ -102,14 +102,27 @@ public class UpgradeSystem : MonoBehaviour
 
         foreach (UpgradeTree Tree in TowerUpgradeTrees)
         {
-            if(Tree.BaseTowers.GetComponent<BaseTurret>().BaseTower == TowerBase.BaseTower)
+            if (Tree.BaseTowers.GetComponent<Aura>())
             {
-                if (Tree.BaseTowers.GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
+                if (Tree.BaseTowers.GetComponent<Aura>().TowerName == TowerBase.TowerName)
                 {
                     FoundTree.Tree = Tree;
                     FoundTree.AvailableTowers.Add(Tree.TowersBranch1[0]);
                     FoundTree.AvailableTowers.Add(Tree.TowersBranch2[0]);
                     return FoundTree;
+                }
+            }
+            else if (Tree.BaseTowers.transform.GetChild(0).GetComponent<BaseTurret>())
+            {
+                if (Tree.BaseTowers.transform.GetChild(0).GetComponent<BaseTurret>().BaseTower == TowerBase.BaseTower)
+                {
+                    if (Tree.BaseTowers.GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
+                    {
+                        FoundTree.Tree = Tree;
+                        FoundTree.AvailableTowers.Add(Tree.TowersBranch1[0]);
+                        FoundTree.AvailableTowers.Add(Tree.TowersBranch2[0]);
+                        return FoundTree;
+                    }
                 }
             }
             else
@@ -119,21 +132,45 @@ public class UpgradeSystem : MonoBehaviour
 
             for (int i = 0; i < Tree.TowersBranch1.Count - 1; i++)
             {
-                if (Tree.TowersBranch1[i].GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
+                if (Tree.TowersBranch1[i].GetComponent<Aura>())
                 {
-                    FoundTree.Tree = Tree;
-                    FoundTree.AvailableTowers.Add(Tree.TowersBranch1[i+1]);
-                    return FoundTree;
+                    if (Tree.TowersBranch1[i].GetComponent<Aura>().TowerName == TowerBase.TowerName)
+                    {
+                        FoundTree.Tree = Tree;
+                        FoundTree.AvailableTowers.Add(Tree.TowersBranch1[i + 1]);
+                        return FoundTree;
+                    }
+                }
+                else if (Tree.TowersBranch1[i].transform.GetChild(0).GetComponent<BaseTurret>())
+                {
+                    if (Tree.TowersBranch1[i].transform.GetChild(0).GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
+                    {
+                        FoundTree.Tree = Tree;
+                        FoundTree.AvailableTowers.Add(Tree.TowersBranch1[i + 1]);
+                        return FoundTree;
+                    }
                 }
             }
 
             for (int i = 0; i < Tree.TowersBranch2.Count -1; i++)
             {
-                if (Tree.TowersBranch2[i].GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
+                if (Tree.TowersBranch1[i].GetComponent<Aura>())
                 {
-                    FoundTree.Tree = Tree;
-                    FoundTree.AvailableTowers.Add(Tree.TowersBranch1[i+1]);
-                    return FoundTree;
+                    if (Tree.TowersBranch2[i].GetComponent<Aura>().TowerName == TowerBase.TowerName)
+                    {
+                        FoundTree.Tree = Tree;
+                        FoundTree.AvailableTowers.Add(Tree.TowersBranch1[i + 1]);
+                        return FoundTree;
+                    }
+                }
+                else if (Tree.TowersBranch2[i].transform.GetChild(0).GetComponent<BaseTurret>())
+                {
+                    if (Tree.TowersBranch2[i].transform.GetChild(0).GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
+                    {
+                        FoundTree.Tree = Tree;
+                        FoundTree.AvailableTowers.Add(Tree.TowersBranch1[i + 1]);
+                        return FoundTree;
+                    }
                 }
             }
         }
@@ -168,6 +205,11 @@ public class UpgradeSystem : MonoBehaviour
             case BaseTowerNames.MortorTower:
                 {
                     CurrentPanel = MortorTowerUpgradePanel;
+                    break;
+                }
+            case BaseTowerNames.Aura:
+                {
+                    CurrentPanel = AuraTowerUpgradePanel;
                     break;
                 }
             default:

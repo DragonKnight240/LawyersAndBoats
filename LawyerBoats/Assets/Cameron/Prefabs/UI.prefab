@@ -272,6 +272,59 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &837828556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 837828557}
+  - component: {fileID: 837828558}
+  m_Layer: 0
+  m_Name: TileManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &837828557
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837828556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3044135276675186119}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &837828558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 837828556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5346b568d44594543b014c5216a97fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tiles: []
+  highlightedMat: {fileID: 2100000, guid: 00238465b634b1e47ab35d4d6ff38ba6, type: 2}
+  selectedTower: 0
+  towerTypes:
+  - {fileID: 1601840016808834542, guid: 7a363293ecd1ff6408976d53fd8d97bc, type: 3}
+  - {fileID: 6333188767906216877, guid: b0f95026053c8de4293f0ff1236e6f32, type: 3}
+  - {fileID: 8992884642776893331, guid: 192bef4218358d9489dcefd73c057436, type: 3}
+  - {fileID: 2307158971832377397, guid: 49584b8a8aa246e43a4a4fd4d25a3e24, type: 3}
+  - {fileID: 2661332665821539259, guid: 397479690e5b64241a733108ef72cacd, type: 3}
 --- !u!1 &1084689134
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,14 +570,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 837828558}
         m_TargetAssemblyTypeName: TileManager, Assembly-CSharp
         m_MethodName: SelectTower
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -953,6 +1006,7 @@ Transform:
   - {fileID: 5314911760936532238}
   - {fileID: 5314911761627048503}
   - {fileID: 5314911760206174698}
+  - {fileID: 837828557}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3434,10 +3488,22 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6784350084886926019, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837828558}
     - target: {fileID: 6784350085051607168, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6784350085051607170, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837828558}
+    - target: {fileID: 6784350085581815948, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837828558}
     - target: {fileID: 6784350085581815951, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
@@ -3529,6 +3595,14 @@ PrefabInstance:
     - target: {fileID: 6784350085598184206, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6784350085620304080, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 837828558}
+    - target: {fileID: 6784350085620304080, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6784350085620304083, guid: dd9fcf4182eac8541b4b05ced7999cc6, type: 3}
       propertyPath: m_LocalScale.x

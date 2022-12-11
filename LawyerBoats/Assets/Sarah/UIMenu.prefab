@@ -45,20 +45,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerUpgradeTrees:
-  - BaseTowers: {fileID: 5303958735245355689, guid: 2e05d5288d5a5ef418bc3532688223d5, type: 3}
+  - BaseTowers: {fileID: 1601840016808834542, guid: 7a363293ecd1ff6408976d53fd8d97bc, type: 3}
     TowersBranch1:
-    - {fileID: 4388877710910958945, guid: 18fe196b57844494383ea4461b13dbdc, type: 3}
+    - {fileID: 7064150017592439257, guid: cdb931cde53ae8b4b88c6eb3aa7be599, type: 3}
+    - {fileID: 2431425296848498449, guid: 5d080b6ed39a85140b5943e26fb484d9, type: 3}
     TowersBranch2:
-    - {fileID: 3737879365165928383, guid: f04e1df08103a7e4a81e69acb41b0fc0, type: 3}
-  - BaseTowers: {fileID: 8331883683228829173, guid: 19cadf10288bb614f821cb9712611a3a, type: 3}
-    TowersBranch1: []
-    TowersBranch2: []
-  - BaseTowers: {fileID: 7213416212892604362, guid: 08bea1bc97a94aa4a942dd184207575e, type: 3}
-    TowersBranch1: []
-    TowersBranch2: []
-  - BaseTowers: {fileID: 3737879365165928383, guid: f04e1df08103a7e4a81e69acb41b0fc0, type: 3}
-    TowersBranch1: []
-    TowersBranch2: []
+    - {fileID: 4200580174651054797, guid: a86a148de0b12b44c935936a482fc1ff, type: 3}
+    - {fileID: 4455796542037022663, guid: 460c9c9bca77d6e4f90f5b7c920b04c1, type: 3}
+  - BaseTowers: {fileID: 8992884642776893331, guid: 192bef4218358d9489dcefd73c057436, type: 3}
+    TowersBranch1:
+    - {fileID: 5932327072642081425, guid: 607404221fd565f44bd0ff2b31639685, type: 3}
+    - {fileID: 6412712437861049198, guid: afcac29da4db90c44b4e40822f02ea24, type: 3}
+    TowersBranch2:
+    - {fileID: 3028781541760926629, guid: 9d0557e03d9a94244b5c29d3aa81a545, type: 3}
+    - {fileID: 6737431509339075080, guid: 31384d41adc4baa47afa595af21c7b76, type: 3}
+  - BaseTowers: {fileID: 6333188767906216877, guid: b0f95026053c8de4293f0ff1236e6f32, type: 3}
+    TowersBranch1:
+    - {fileID: 6303571232479728870, guid: 854dec6198d7f1f4b8fc204861947274, type: 3}
+    - {fileID: 8226106123383116081, guid: 9c921018321618e44b9926385ff94683, type: 3}
+    TowersBranch2:
+    - {fileID: 5940010009192779668, guid: 4ab91e6a08dcaeb44bb42ab472d795f1, type: 3}
+    - {fileID: 1653939032324256447, guid: d71a7fee4b1803946bf061cff9fe1399, type: 3}
+  - BaseTowers: {fileID: 2661332665821539259, guid: 397479690e5b64241a733108ef72cacd, type: 3}
+    TowersBranch1:
+    - {fileID: 1535167671476564816, guid: 5a6f08bb8d676514d9517d20269a46c7, type: 3}
+    - {fileID: 4024818321537302204, guid: 016f1489cfbf94741869bab12c4dcd12, type: 3}
+    TowersBranch2:
+    - {fileID: 4872280631162581953, guid: 6f33a810ace338346a8cb5689a0eeef4, type: 3}
+    - {fileID: 7860471565337390658, guid: 78524decb0c78de468d8a99e6383a60f, type: 3}
+  - BaseTowers: {fileID: 2307158971832377397, guid: 49584b8a8aa246e43a4a4fd4d25a3e24, type: 3}
+    TowersBranch1:
+    - {fileID: 2816016659285322063, guid: 83bf7b37ed1a6a74195165fddb507c7e, type: 3}
+    TowersBranch2:
+    - {fileID: 2553457022955418226, guid: bbb33c39c3c6c4246acbcef4fceaac70, type: 3}
   CrowNestUpgradePanel: {fileID: 6784350086719858220}
   FrostTowerUpgradePanel: {fileID: 6784350085745806918}
   MagicTowerUpgradePanel: {fileID: 6784350084810329160}
