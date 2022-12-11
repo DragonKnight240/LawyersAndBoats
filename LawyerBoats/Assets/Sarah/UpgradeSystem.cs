@@ -59,6 +59,7 @@ public class UpgradeSystem : MonoBehaviour
     public GameObject FrostTowerUpgradePanel;
     public GameObject MagicTowerUpgradePanel;
     public GameObject MortorTowerUpgradePanel;
+    public GameObject AuraTowerUpgradePanel;
 
     Button button;
     internal GameObject Tower1;
@@ -76,13 +77,6 @@ public class UpgradeSystem : MonoBehaviour
             Destroy(this);
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
 
     public void UpgradeTower(GameObject newTower)
     {
@@ -223,5 +217,6 @@ public class UpgradeSystem : MonoBehaviour
         FrostTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
         MagicTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
         MortorTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
+        AuraTowerUpgradePanel.transform.GetChild(0).gameObject.SetActive(false);
     }
 }
