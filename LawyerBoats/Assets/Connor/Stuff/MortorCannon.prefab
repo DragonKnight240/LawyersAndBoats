@@ -146,7 +146,7 @@ MonoBehaviour:
   enemyTag: Enemy
   usesProjectile: 1
   radius: 30
-  fireRate: 1
+  fireRate: 3
   rotateSpeed: 4
   projectileObject: {fileID: 5551312999631780968, guid: 592aa9a2cab8241418ec951c4154eaf0, type: 3}
   projectileOrigin: {fileID: 7213416211895235529}

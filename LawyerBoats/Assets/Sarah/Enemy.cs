@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     internal bool isAlive = true;
     internal bool shouldMove = true;
     public bool sick = false;
+    public bool bleeding = false;
     MeshRenderer MeshRend;
     float Timer = 0;
     public float AnimationTimer = 5;

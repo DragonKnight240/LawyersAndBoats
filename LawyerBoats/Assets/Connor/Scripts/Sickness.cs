@@ -11,24 +11,12 @@ public class Sickness : MonoBehaviour
 
     private float timer = 0;
 
-    //void Awake()
-    //{
-
-    //}
-
-    void Start()
-    {
-
-    }
-
-
     void Update()
     {
         time();
 
         if (ready)
         {
-            Debug.Log("works");
             Decay(damageTick);
             Pandemic();
             ready = false;

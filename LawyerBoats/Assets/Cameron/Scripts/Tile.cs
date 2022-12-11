@@ -48,11 +48,11 @@ public class Tile : MonoBehaviour
 
     void OnMouseDown()
     {
-        if(gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost() > 0)
+        if(gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost() > 0)
         {
             if (attachedTower == null && Time.timeScale == 1)
             {
-                gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponent<BaseTurret>().GetCost());
+                gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost());
                 attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
             }
         }

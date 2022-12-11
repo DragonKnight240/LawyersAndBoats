@@ -12,9 +12,9 @@ public class Frosty : MonoBehaviour
         if (other.gameObject.tag == "Enemy")
         {
             Enemy enemy = other.gameObject.GetComponent<Enemy>();
-            if ((enemy.maxSpeed *= 1 - (slowPercentage / 100)) > enemy.Speed)
+            if ((enemy.maxSpeed * (1 - (slowPercentage / 100))) < enemy.Speed)
             {
-                enemy.Speed = (enemy.maxSpeed *= 1 - (slowPercentage / 100)); // if there is a better slow don't slow.
+                enemy.Speed = (enemy.maxSpeed * (1 - (slowPercentage / 100))); // if there is a better slow don't slow.
             }
         }
     }

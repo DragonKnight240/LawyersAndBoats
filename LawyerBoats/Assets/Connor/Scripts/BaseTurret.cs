@@ -11,6 +11,7 @@ public class BaseTurret : MonoBehaviour
     public bool usesProjectile = true;
 
     public float radius = 10f;
+    public float baseFireRate = 1f;
     public float fireRate = 1f;
     public float rotateSpeed = 2f;
 
@@ -18,6 +19,7 @@ public class BaseTurret : MonoBehaviour
     public Transform projectileOrigin;
     public Transform towerRotate;
 
+    public int baseDamage = 10;
     public int damage = 10;
 
     [SerializeField] int cost = 5;
@@ -36,6 +38,10 @@ public class BaseTurret : MonoBehaviour
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
+            if (enemy.GetComponent<Enemy>().sick == true)
+            {
+                continue;
+            }
             float distance = Vector3.Distance(transform.position, enemy.transform.position);
 
             if (distance < smallestDistance)
