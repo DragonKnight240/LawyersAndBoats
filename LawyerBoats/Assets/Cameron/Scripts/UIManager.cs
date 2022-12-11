@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject pauseMenu;
     public GameObject optionsMenu;
 
+    public GameObject loseScreen;
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -56,6 +58,7 @@ public class UIManager : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
 
@@ -71,5 +74,16 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("CamsTestLevel");
         GameManager.Instance.State = GameState.Game;
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
+
+    public void ReloadScene()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

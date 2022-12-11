@@ -121,8 +121,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-
     public void addHealth()
     {
         UpdateHealthUI();
@@ -133,6 +131,11 @@ public class GameManager : MonoBehaviour
     {
         UpdateHealthUI();
         Health -= Mathf.RoundToInt(health * DamageMultiplier);
+        if (Health <= 0)
+        {
+            UIManager.Instance.loseScreen.SetActive(true);
+            ToggleTime();
+        }
     }
 
     public int getHealth()

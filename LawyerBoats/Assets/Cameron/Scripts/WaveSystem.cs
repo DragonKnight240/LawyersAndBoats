@@ -43,11 +43,18 @@ public class WaveSystem : MonoBehaviour
 
     void Update()
     {
+        if (currentWave == amountOfWaves && GameManager.Instance.enemyCount <= 0)
+        {
+            spawning = false;
+            Time.timeScale = 0;
+            winScreen.SetActive(true);
+            return;
+        }
         if (!spawning)
         {
             return;
         }
-        if (currentWave == amountOfWaves && EnemiesInWave() <= 0)
+        if (currentWave >= amountOfWaves && EnemiesInWave() <= 0)
         {
             spawning = false;
             return;
@@ -73,10 +80,6 @@ public class WaveSystem : MonoBehaviour
         if (timeSinceLastSpawn > timeBetweenSpawns && spawningEnemies && currentTimeToNextWave <= 0)
         {
             timeSinceLastSpawn = 0f;
-            /*do
-            {
-                rand = UnityEngine.Random.Range(0, waves[currentWave].EnemiesToSpawn.Length);
-            } while (waves[currentWave].EnemiesToSpawn[rand].enemiesInWave <= 0);*/
             if (waves[currentWave].EnemiesToSpawn[currentEnemy].enemiesInWave > 0)
             {
                 SpawnEnemy(waves[currentWave].EnemiesToSpawn[currentEnemy].enemy);
@@ -105,19 +108,14 @@ public class WaveSystem : MonoBehaviour
 
     void NextWave()
     {
-
         ++currentWave;
         if (currentWave == amountOfWaves)
         {
             spawning = false;
-            return;
-        }
-        /*if (currentWave == amountOfWaves)
-        {
             Time.timeScale = 0;
             winScreen.SetActive(true);
             return;
-        }*/
+        }
         currentEnemy = 0;
         timeBetweenSpawns = waveTime / EnemiesInWave();
         currentTimeToNextWave = timeToNextWave;
