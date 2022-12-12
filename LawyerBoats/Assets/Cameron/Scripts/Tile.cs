@@ -70,11 +70,21 @@ public class Tile : MonoBehaviour
 
         if (attachedTower == null && Time.timeScale == 1)
         {
-            if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost() > 0)
+            if (tm.towerTypes[tm.selectedTower].GetComponent<Aura>())
             {
-
-                gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost());
-                attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
+                if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<Aura>().Cost > 0)
+                {
+                    gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponent<Aura>().Cost);
+                    attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
+                }
+            }
+            else
+            {
+                if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost() > 0)
+                {
+                    gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost());
+                    attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
+                }
             }
         }
         else
