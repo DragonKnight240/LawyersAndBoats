@@ -118,7 +118,7 @@ MonoBehaviour:
   baseFireRate: 1
   fireRate: 1
   rotateSpeed: 4
-  projectileObject: {fileID: 5551312999631780968, guid: 592aa9a2cab8241418ec951c4154eaf0, type: 3}
+  projectileObject: {fileID: 4098867087616297299, guid: 12a1eb84370f33644b9b6536c646d792, type: 3}
   projectileOrigin: {fileID: 6332410676667387850}
   towerRotate: {fileID: 6332410676667387850}
   baseDamage: 5

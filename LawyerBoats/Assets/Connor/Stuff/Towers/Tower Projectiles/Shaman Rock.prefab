@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3492300674734193357
+--- !u!1 &1301474447791651189
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6101649062953499770}
-  - component: {fileID: 3450812800720518820}
-  - component: {fileID: 8368352402032509508}
+  - component: {fileID: 8343293071410243541}
+  - component: {fileID: 8145542618431695773}
+  - component: {fileID: 4242069862727478083}
   m_Layer: 0
-  m_Name: Bomb Renderer
+  m_Name: Mage Base Renderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6101649062953499770
+--- !u!4 &8343293071410243541
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492300674734193357}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0.7071068, w: 0}
+  m_GameObject: {fileID: 1301474447791651189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6536310139611979713}
+  m_Father: {fileID: 4443806958100980419}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
---- !u!33 &3450812800720518820
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &8145542618431695773
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492300674734193357}
-  m_Mesh: {fileID: 4300000, guid: b63a8f69a13184b4198e616b393c9ab2, type: 3}
---- !u!23 &8368352402032509508
+  m_GameObject: {fileID: 1301474447791651189}
+  m_Mesh: {fileID: 4300000, guid: 9aa2d638b7df5184cb38f41171588031, type: 3}
+--- !u!23 &4242069862727478083
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3492300674734193357}
+  m_GameObject: {fileID: 1301474447791651189}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 71c41768fe68ad54b98375a6708b0262, type: 2}
+  - {fileID: 2100000, guid: 541ecb18ea5dfda4586b766f061cbe28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -83,7 +83,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &5551312999631780968
+--- !u!1 &8913609570878442180
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -91,58 +91,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6536310139611979713}
-  - component: {fileID: 8221333679013151683}
+  - component: {fileID: 4443806958100980419}
+  - component: {fileID: 2597130567688849950}
   m_Layer: 0
-  m_Name: Boom
+  m_Name: Shaman Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6536310139611979713
+--- !u!4 &4443806958100980419
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5551312999631780968}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_GameObject: {fileID: 8913609570878442180}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 6101649062953499770}
+  - {fileID: 8343293071410243541}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!114 &8221333679013151683
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2597130567688849950
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5551312999631780968}
+  m_GameObject: {fileID: 8913609570878442180}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d2e0b957ab374c34096b4b7dc1951726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  splashRadius: 20
-  explosive: 1
+  splashRadius: 0
+  explosive: 0
   electrifying: 0
   bleed: 0
   bounces: 0
   disease: 0
-  stuns: 0
+  stuns: 1
   slows: 0
   electricTargets: 0
   bouncesLeft: 0
-  damage: 0
+  damage: 5
   bleedDamage: 0
   bleedTime: 0
   bleedTick: 0
-  stunTime: 0
+  stunTime: 0.25
   slowTime: 0
   slowPercentage: 0
