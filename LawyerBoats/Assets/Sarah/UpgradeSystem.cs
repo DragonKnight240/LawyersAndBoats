@@ -82,7 +82,17 @@ public class UpgradeSystem : MonoBehaviour
     public void UpgradeTower(GameObject newTower)
     {
         print(newTower.name);
-        int CostOfUpgrade = newTower.transform.GetChild(0).GetComponent<BaseTurret>().GetCost();
+        int CostOfUpgrade;
+        
+        if(newTower.GetComponent<Aura>())
+        {
+            CostOfUpgrade = newTower.GetComponent<Aura>().Cost;
+        }
+        else
+        {
+            CostOfUpgrade = newTower.transform.GetChild(0).GetComponent<BaseTurret>().GetCost();
+        }
+        
 
         if (GameManager.Instance.getMoney() - CostOfUpgrade > 0)
         {
@@ -99,14 +109,17 @@ public class UpgradeSystem : MonoBehaviour
         TreeAndUpgrade FoundTree = new TreeAndUpgrade();
         BaseTurret TowerBase = new BaseTurret();
         Aura AuraBase = new Aura();
+        bool CheckAura = false;
 
         if(Tower.transform.GetComponent<Aura>())
         {
             AuraBase = Tower.transform.GetComponent<Aura>();
+            CheckAura = true;
         }
         else
         {
             TowerBase = Tower.transform.GetChild(0).GetComponent<BaseTurret>();
+            CheckAura = false;
         }
         
         
@@ -115,7 +128,7 @@ public class UpgradeSystem : MonoBehaviour
 
         foreach (UpgradeTree Tree in TowerUpgradeTrees)
         {
-            if (Tree.BaseTowers.GetComponent<Aura>())
+            if (Tree.BaseTowers.GetComponent<Aura>() && CheckAura)
             {
                 if (Tree.BaseTowers.GetComponent<Aura>().TowerName == AuraBase.TowerName)
                 {
@@ -125,7 +138,7 @@ public class UpgradeSystem : MonoBehaviour
                     return FoundTree;
                 }
             }
-            else if (Tree.BaseTowers.transform.GetChild(0).GetComponent<BaseTurret>())
+            else if (Tree.BaseTowers.transform.GetChild(0).GetComponent<BaseTurret>() && !CheckAura)
             {
                 if (Tree.BaseTowers.transform.GetChild(0).GetComponent<BaseTurret>().BaseTower == TowerBase.BaseTower)
                 {
@@ -145,7 +158,7 @@ public class UpgradeSystem : MonoBehaviour
 
             for (int i = 0; i < Tree.TowersBranch1.Count - 1; i++)
             {
-                if (Tree.TowersBranch1[i].GetComponent<Aura>())
+                if (Tree.TowersBranch1[i].GetComponent<Aura>() && CheckAura)
                 {
                     if (Tree.TowersBranch1[i].GetComponent<Aura>().TowerName == AuraBase.TowerName)
                     {
@@ -154,7 +167,7 @@ public class UpgradeSystem : MonoBehaviour
                         return FoundTree;
                     }
                 }
-                else if (Tree.TowersBranch1[i].transform.GetChild(0).GetComponent<BaseTurret>())
+                else if (Tree.TowersBranch1[i].transform.GetChild(0).GetComponent<BaseTurret>() && !CheckAura)
                 {
                     if (Tree.TowersBranch1[i].transform.GetChild(0).GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
                     {
@@ -167,7 +180,7 @@ public class UpgradeSystem : MonoBehaviour
 
             for (int i = 0; i < Tree.TowersBranch2.Count -1; i++)
             {
-                if (Tree.TowersBranch2[i].GetComponent<Aura>())
+                if (Tree.TowersBranch2[i].GetComponent<Aura>() && CheckAura)
                 {
                     if (Tree.TowersBranch2[i].GetComponent<Aura>().TowerName == AuraBase.TowerName)
                     {
@@ -176,7 +189,7 @@ public class UpgradeSystem : MonoBehaviour
                         return FoundTree;
                     }
                 }
-                else if (Tree.TowersBranch2[i].transform.GetChild(0).GetComponent<BaseTurret>())
+                else if (Tree.TowersBranch2[i].transform.GetChild(0).GetComponent<BaseTurret>() && !CheckAura)
                 {
                     if (Tree.TowersBranch2[i].transform.GetChild(0).GetComponent<BaseTurret>().TowerName == TowerBase.TowerName)
                     {
@@ -268,7 +281,7 @@ public class UpgradeSystem : MonoBehaviour
             }
             else
             {
-                print(Tree.AvailableTowers[0].GetComponent<Aura>().TowerName);
+                print(Tree.AvailableTowers[0].GetComponent<Aura>());
                 CurrentPanel.GetComponent<UpgradeMenuChange>().TextElement1.GetComponent<TMP_Text>().text = Tree.AvailableTowers[0].GetComponent<Aura>().TowerName.ToString();
             }
 
