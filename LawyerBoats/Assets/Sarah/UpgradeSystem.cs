@@ -150,10 +150,10 @@ public class UpgradeSystem : MonoBehaviour
                         return FoundTree;
                     }
                 }
-            }
-            else
-            {
-                continue;
+                else
+                {
+                    continue;
+                }
             }
 
             for (int i = 0; i < Tree.TowersBranch1.Count - 1; i++)
