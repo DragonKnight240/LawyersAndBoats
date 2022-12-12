@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1264655836809984700}
   m_Layer: 0
   m_Name: Small Archer Crystal R
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
+  disease: 0
   radius: 30
   baseFireRate: 1
   fireRate: 1
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: 0
-  endPos: 7.5
+  endPos: 9
   oscillate: 2
 --- !u!1 &2430511222919340260
 GameObject:
@@ -158,7 +159,7 @@ GameObject:
   - component: {fileID: 2430511222919340261}
   m_Layer: 0
   m_Name: Small Archer Crystal L
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -256,6 +257,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
+  disease: 0
   radius: 30
   baseFireRate: 1
   fireRate: 1
@@ -282,7 +284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: 0
-  endPos: 7.5
+  endPos: 9
   oscillate: 2
 --- !u!1 &2431425296848498449
 GameObject:

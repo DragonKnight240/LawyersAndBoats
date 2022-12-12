@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3036219250785848130}
   m_Layer: 0
   m_Name: Poison bomb Crystal
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
+  disease: 1
   radius: 30
   baseFireRate: 1
   fireRate: 1
@@ -140,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: 0
-  endPos: 7.5
+  endPos: 11
   oscillate: 2
 --- !u!1 &8225994908619738291
 GameObject:

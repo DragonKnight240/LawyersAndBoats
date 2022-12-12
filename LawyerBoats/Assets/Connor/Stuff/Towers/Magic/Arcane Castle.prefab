@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3162045823028914715}
   m_Layer: 0
   m_Name: Mage Crystal
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,6 +100,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
+  disease: 0
   radius: 30
   baseFireRate: 1
   fireRate: 1
@@ -126,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: 0
-  endPos: 0
+  endPos: 9
   oscillate: 2
 --- !u!1 &8992884642776893331
 GameObject:

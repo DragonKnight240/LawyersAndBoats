@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 1654268053381893337}
   m_Layer: 0
   m_Name: Bomb Crystal
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -282,7 +282,8 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
-  radius: 30
+  disease: 0
+  radius: 300
   baseFireRate: 1
   fireRate: 1
   rotateSpeed: 4
@@ -308,5 +309,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: 0
-  endPos: 7.5
+  endPos: 12
   oscillate: 2

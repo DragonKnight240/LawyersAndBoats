@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 8709820754803042831}
   m_Layer: 0
   m_Name: Crystal
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
+  disease: 0
   radius: 30
   baseFireRate: 1
   fireRate: 1
@@ -224,5 +225,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPos: 0
-  endPos: 7.5
+  endPos: 8
   oscillate: 2

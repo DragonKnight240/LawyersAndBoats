@@ -9,6 +9,7 @@ public class BaseTurret : MonoBehaviour
     public string enemyTag = "Enemy";
 
     public bool usesProjectile = true;
+    public bool disease;
 
     public float radius = 10f;
     public float baseFireRate = 1f;
@@ -34,9 +35,8 @@ public class BaseTurret : MonoBehaviour
     {
         InvokeRepeating("FindNearbyEnemies", 0f, 0.5f);
 
-        if(transform.childCount > 1)
+        if(BaseTower == UpgradeSystem.BaseTowerNames.FrostTower)
         {
-            ParticleSystemObject = transform.GetChild(1).GetComponent<ParticleSystem>();
             ParticleSystemObject.Stop();
         }
     }
@@ -48,7 +48,7 @@ public class BaseTurret : MonoBehaviour
         GameObject nearestEnemy = null;
         foreach (GameObject enemy in enemies)
         {
-            if (enemy.GetComponent<Enemy>().sick == true)
+            if (enemy.GetComponent<Enemy>().sick == true && disease)
             {
                 continue;
             }

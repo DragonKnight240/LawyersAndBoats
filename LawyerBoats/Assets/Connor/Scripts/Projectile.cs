@@ -41,6 +41,13 @@ public class Projectile : MonoBehaviour
         target = targetPos;
     }
 
+    private void Start()
+    {
+        if (bounces)
+        {
+            Destroy(gameObject, 5.0f);
+        }
+    }
 
     void Update()
     {
@@ -105,7 +112,7 @@ public class Projectile : MonoBehaviour
             //checkDisease();
             if (target.GetComponent<Enemy>().sick == false)
             {
-                target.gameObject.AddComponent<Sickness>(); // stops dupe scripts but needs a way not to shoot
+                target.gameObject.AddComponent<Sickness>();
                 target.GetComponent<Enemy>().sick = true;
             }
 
@@ -166,6 +173,7 @@ public class Projectile : MonoBehaviour
 
     void Ricochet()
     {
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, splashRadius);
         for (int i = 0; i < colliders.Length; i++)
         {
