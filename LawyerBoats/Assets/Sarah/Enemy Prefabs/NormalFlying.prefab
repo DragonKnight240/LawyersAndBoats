@@ -273,10 +273,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 0
-  Speed: 10
-  MaxHealth: 12
+  Speed: 7
+  MaxHealth: 15
   Damage: 2
   Money: 5
+  sick: 0
+  bleeding: 0
   AnimationTimer: 5
   goldText: {fileID: 1551853132047436205, guid: 380a049bac7a10a488b67b3f404cdec0, type: 3}
   goldTextYOffset: 10
