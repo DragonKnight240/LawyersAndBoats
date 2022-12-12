@@ -51,16 +51,14 @@ public class Tile : MonoBehaviour
         if (!UpgradeSystem.Instance.CurrentPanel)
         {
             TowerLogic();
-            print("Not Set");
         }
         else if(!UpgradeSystem.Instance.CurrentPanel.transform.GetChild(0).gameObject.activeInHierarchy)
         {
             TowerLogic();
-            print("Not Active");
         }
-        else
+        else if(UpgradeSystem.Instance.CurrentPanel.transform.GetChild(0).gameObject.activeInHierarchy && UpgradeSystem.Instance.SelectedTile == this)
         {
-            print("Active");
+            UpgradeSystem.Instance.HideAllUpgradePanels();
         }
     }
 
