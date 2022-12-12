@@ -109,8 +109,8 @@ MonoBehaviour:
   towerRotate: {fileID: 8996181238101777301}
   baseDamage: 10
   ParticleSystemObject: {fileID: 0}
-  BaseTower: 0
-  TowerName: 0
+  BaseTower: 2
+  TowerName: 2
   damage: 10
   cost: 5
 --- !u!114 &3162045823028914715

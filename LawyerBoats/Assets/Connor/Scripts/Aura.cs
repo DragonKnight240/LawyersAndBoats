@@ -15,6 +15,8 @@ public class Aura : MonoBehaviour
     public UpgradeSystem.BaseTowerNames BaseTower;
     public UpgradeSystem.BaseTowerNames TowerName;
 
+    public int Cost;
+
     void Start()
     {
         if (damageAura || atkSpdAura)
