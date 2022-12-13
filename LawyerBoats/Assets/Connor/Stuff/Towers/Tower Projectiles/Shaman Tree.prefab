@@ -60,7 +60,7 @@ MonoBehaviour:
   bleedDamage: 0
   bleedTime: 0
   bleedTick: 0
-  stunTime: 0.5
+  stunTime: 0.3
   slowTime: 0
   slowPercentage: 0
 --- !u!1 &4677346141250888304

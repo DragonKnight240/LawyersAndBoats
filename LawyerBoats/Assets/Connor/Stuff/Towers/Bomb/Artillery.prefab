@@ -210,7 +210,7 @@ MonoBehaviour:
   BaseTower: 3
   TowerName: 11
   damage: 100
-  cost: 40
+  cost: 30
 --- !u!114 &4695010957608619608
 MonoBehaviour:
   m_ObjectHideFlags: 0

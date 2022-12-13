@@ -57,8 +57,8 @@ MonoBehaviour:
   electricTargets: 0
   bouncesLeft: 0
   damage: 5
-  bleedDamage: 10
-  bleedTime: 10
+  bleedDamage: 50
+  bleedTime: 5
   bleedTick: 1
   stunTime: 0
   slowTime: 0
