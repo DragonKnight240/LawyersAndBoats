@@ -84,6 +84,8 @@ public class UIManager : MonoBehaviour
     public void ReloadScene()
     {
         Time.timeScale = 1;
+        GameManager.Instance.Health = 100;
+        GameManager.Instance.Money = GameManager.Instance.startingMoney;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

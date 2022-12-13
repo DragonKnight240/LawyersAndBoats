@@ -1183,7 +1183,7 @@ MonoBehaviour:
   goldText: {fileID: 1551853132047436205, guid: 380a049bac7a10a488b67b3f404cdec0, type: 3}
   goldTextYOffset: 4
   DamageNumPrefab: {fileID: 3803110282806632395, guid: 5f67c257c232ac845821143c68f34ca7, type: 3}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 6639150148287785615}
 --- !u!114 &2182674737862617314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,7 +1221,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3379677388145624261}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.4978752, y: 2.5800252, z: 2.7176735}
@@ -1237,7 +1237,7 @@ Rigidbody:
   m_Mass: 1
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

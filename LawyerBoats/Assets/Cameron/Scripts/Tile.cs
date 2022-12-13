@@ -70,7 +70,7 @@ public class Tile : MonoBehaviour
         {
             if (tm.towerTypes[tm.selectedTower].GetComponent<Aura>())
             {
-                if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<Aura>().Cost > 0)
+                if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponent<Aura>().Cost >= 0)
                 {
                     gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponent<Aura>().Cost);
                     attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);
@@ -78,7 +78,7 @@ public class Tile : MonoBehaviour
             }
             else
             {
-                if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost() > 0)
+                if (gm.getMoney() - tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost() >= 0)
                 {
                     gm.loseMoney(tm.towerTypes[tm.selectedTower].GetComponentsInChildren<BaseTurret>()[0].GetCost());
                     attachedTower = Instantiate(tm.towerTypes[tm.selectedTower].gameObject, transform);

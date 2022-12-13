@@ -94,7 +94,7 @@ public class UpgradeSystem : MonoBehaviour
         }
         
 
-        if (GameManager.Instance.getMoney() - CostOfUpgrade > 0)
+        if (GameManager.Instance.getMoney() - CostOfUpgrade >= 0)
         {
             Destroy(SelectedTile.attachedTower);
             SelectedTile.attachedTower = Instantiate(newTower.gameObject, SelectedTile.transform);

@@ -19,10 +19,10 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get { return _instance; } }
     public GameState State;
 
-    private int Money = 0;
-    private int Health = 100;
+    internal int Money = 0;
+    internal int Health = 100;
 
-    [SerializeField] int startingMoney = 50;
+    [SerializeField] internal int startingMoney = 50;
 
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI moneyText;
