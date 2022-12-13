@@ -103,3 +103,4 @@ MonoBehaviour:
   atkSpdAura: 0
   BaseTower: 22
   TowerName: 22
+  Cost: 100

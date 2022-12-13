@@ -1638,9 +1638,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 0
   Speed: 20
-  MaxHealth: 5
-  Damage: 4
-  Money: 4
+  MaxHealth: 90
+  Damage: 5
+  Money: 1
   sick: 0
   bleeding: 0
   AnimationTimer: 5

@@ -249,13 +249,13 @@ MonoBehaviour:
     value: 0
   saturation:
     overrideState: 1
-    value: 22
+    value: 38
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.69
+    value: 1.54
   contrast:
     overrideState: 1
     value: 10

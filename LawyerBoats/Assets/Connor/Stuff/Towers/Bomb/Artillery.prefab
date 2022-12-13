@@ -205,12 +205,12 @@ MonoBehaviour:
   projectileObject: {fileID: 4098867087616297299, guid: 271707fc289006d43a5556e160d59d02, type: 3}
   projectileOrigin: {fileID: 7545128344115580524}
   towerRotate: {fileID: 7545128344115580524}
-  baseDamage: 5
+  baseDamage: 100
   ParticleSystemObject: {fileID: 0}
   BaseTower: 3
   TowerName: 11
-  damage: 5
-  cost: 5
+  damage: 100
+  cost: 40
 --- !u!114 &4695010957608619608
 MonoBehaviour:
   m_ObjectHideFlags: 0

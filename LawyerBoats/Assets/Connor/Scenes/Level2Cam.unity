@@ -1549,7 +1549,13 @@ MonoBehaviour:
     - enemy: {fileID: 1182730407572929803, guid: 4ed626d04499a59488e1f74c1afc11e3, type: 3}
       enemiesInWave: 8
     - enemy: {fileID: 860655218304564303, guid: ac9d5f10ec45e4e4f90d22df80dc8337, type: 3}
-      enemiesInWave: 3
+      enemiesInWave: 1
+  - EnemiesToSpawn:
+    - enemy: {fileID: 860655218304564303, guid: ac9d5f10ec45e4e4f90d22df80dc8337, type: 3}
+      enemiesInWave: 5
+  - EnemiesToSpawn:
+    - enemy: {fileID: 7027804521537092828, guid: d81f468506f25c24589008a45366e04b, type: 3}
+      enemiesInWave: 1
   portal: {fileID: 73323992}
   timeToNextWave: 5
 --- !u!4 &511766610

@@ -1954,8 +1954,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 0
   Speed: 10
-  MaxHealth: 12
-  Damage: 2
+  MaxHealth: 130
+  Damage: 5
   Money: 2
   sick: 0
   bleeding: 0

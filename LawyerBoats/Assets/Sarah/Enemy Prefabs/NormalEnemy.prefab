@@ -90,9 +90,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 0
   Speed: 10
-  MaxHealth: 15
-  Damage: 3
-  Money: 3
+  MaxHealth: 150
+  Damage: 5
+  Money: 2
   sick: 0
   bleeding: 0
   AnimationTimer: 5

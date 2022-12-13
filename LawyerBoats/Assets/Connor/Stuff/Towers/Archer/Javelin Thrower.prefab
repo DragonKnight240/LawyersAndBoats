@@ -198,6 +198,7 @@ MonoBehaviour:
   target: {fileID: 0}
   enemyTag: Enemy
   usesProjectile: 1
+  disease: 0
   radius: 30
   baseFireRate: 1
   fireRate: 1
@@ -205,12 +206,12 @@ MonoBehaviour:
   projectileObject: {fileID: 3186700162197795035, guid: 8eec36ab61e2a2046bd13b622d2e3c27, type: 3}
   projectileOrigin: {fileID: 7065478611420094861}
   towerRotate: {fileID: 7065478611420094861}
-  baseDamage: 2
+  baseDamage: 50
   ParticleSystemObject: {fileID: 0}
   BaseTower: 0
   TowerName: 7
-  damage: 5
-  cost: 5
+  damage: 50
+  cost: 25
 --- !u!114 &7065478611420094856
 MonoBehaviour:
   m_ObjectHideFlags: 0
